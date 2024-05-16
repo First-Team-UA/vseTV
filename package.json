@@ -2,16 +2,35 @@
   "name": "next-template",
   "version": "0.0.2",
   "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "preview": "next build && next start",
-    "typecheck": "tsc --noEmit",
-    "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
-    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "build:frontend": "npm --prefix frontend run build",
+    "build:backend": "npm --prefix backend run build",
+    "build": "npm run build:frontend && npm run build:backend",
+    "start:frontend": "npm --prefix frontend run start",
+    "start:backend": "npm --prefix backend run start",
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+    "lint:frontend": "npm --prefix frontend run lint",
+    "lint:backend": "npm --prefix backend run lint",
+    "lint": "npm run lint:frontend && npm run lint:backend",
+    "lint:fix:frontend": "npm --prefix frontend run lint:fix",
+    "lint:fix:backend": "npm --prefix backend run lint:fix",
+    "lint:fix": "npm run lint:fix:frontend && npm run lint:fix:backend",
+    "typecheck:frontend": "npm --prefix frontend run typecheck",
+    "typecheck:backend": "npm --prefix backend run typecheck",
+    "typecheck": "npm run typecheck:frontend && npm run typecheck:backend",
+    "format:write:frontend": "npm --prefix frontend run format:write",
+    "format:write:backend": "npm --prefix backend run format:write",
+    "format:write": "npm run format:write:frontend && npm run format:write:backend",
+    "format:check:frontend": "npm --prefix frontend run format:check",
+    "format:check:backend": "npm --prefix backend run format:check",
+    "format:check": "npm run format:check:frontend && npm run format:check:backend"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
@@ -24,7 +43,8 @@
     "react-dom": "^18.2.0",
     "sharp": "^0.31.3",
     "tailwind-merge": "^1.13.2",
-    "tailwindcss-animate": "^1.0.6"
+    "tailwindcss-animate": "^1.0.6",
+    "concurrently": "^7.0.0"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
@@ -44,3 +64,4 @@
     "typescript": "^4.9.5"
   }
 }
+
