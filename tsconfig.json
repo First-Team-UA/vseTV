@@ -15,6 +15,8 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
+      "@frontend/*": ["./frontend/*"],
+      "@backend/*": ["./backend/*"],
       "@/*": ["./*"]
     },
     "plugins": [
@@ -24,6 +26,6 @@
     ],
     "strictNullChecks": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "backend/**/*.ts", "frontend/**/*.ts"],
   "exclude": ["node_modules"]
 }
