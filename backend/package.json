@@ -4,20 +4,20 @@
     "private": true,
     "type": "module",
     "scripts": {
-      "dev": "nodemon --config nodemon.json",
-      "build": "tsc",
-      "start": "node dist/index.js"
+        "dev": "nodemon --config nodemon.json",
+        "build": "tsc",
+        "start": "node dist/index.js"
     },
     "dependencies": {
-      "express": "^4.17.1",
-      "mysql2": "^3.9.7",
-      "dotenv": "^16.4.5"
+        "dotenv": "^16.4.5",
+        "express": "^4.17.1",
+        "mysql2": "^3.9.7",
+        "next-template": "file:.."
     },
     "devDependencies": {
-      "nodemon": "^3.1.0",
-      "ts-node": "^10.9.2",
-      "ts-node-dev": "^2.0.0",
-      "typescript": "^4.9.5"
+        "nodemon": "^3.1.0",
+        "ts-node": "^10.9.2",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^4.9.5"
     }
-  }
-  
+}
