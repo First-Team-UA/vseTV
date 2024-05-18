@@ -3,8 +3,6 @@ import express, { Request, Response } from "express"
 
 import { getUsers } from "./services/database"
 
-console.log(getUsers)
-
 dotenv.config()
 
 const app = express()
@@ -14,7 +12,15 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Hello from Express!")
 })
 
+app.get("/users", async (req: Request, res: Response) => {
+  const users = await getUsers()
+  console.log(users)
+
+  res.send("users")
+})
+
 app.listen(port, () => {
   console.log(`Backend server is running at http://localhost:${port}`)
 })
+
 export {}
