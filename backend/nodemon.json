@@ -2,5 +2,5 @@
   "watch": ["src"],
   "ext": "ts,json",
   "ignore": ["src/**/*.spec.ts"],
-  "exec": "npx ts-node-dev --project tsconfig.json --require ts-node/register ./src/index.ts"
+  "exec": "node --loader ts-node/esm --experimental-specifier-resolution=node --experimental-json-modules ./src/index.ts"
 }

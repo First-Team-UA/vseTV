@@ -1,9 +1,9 @@
 import dotenv from "dotenv"
 import express, { Request, Response } from "express"
 
-// import { getUsers } from "./services/database"
+import { getUsers } from "./services/database"
 
-// console.log(getUsers)
+console.log(getUsers)
 
 dotenv.config()
 
