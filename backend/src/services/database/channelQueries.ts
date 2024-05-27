@@ -7,7 +7,7 @@ interface Channel extends RowDataPacket {
 
 export async function getChannels(): Promise<Channel[]> {
   try {
-    const query = 'SELECT name FROM CHANNELS';
+    const query = 'SELECT name FROM channels';
     const [rows] = await pool.query<Channel[]>(query);
     return rows;
   } catch (error) {
@@ -15,4 +15,3 @@ export async function getChannels(): Promise<Channel[]> {
     throw error;
   }
 }
-
