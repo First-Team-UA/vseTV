@@ -1,9 +1,9 @@
 import dotenv from 'dotenv';
-import express, { Request, Response } from 'express';
+import express from 'express';
 import indexRouter from './routes/index';
 import usersRouter from './routes/users';
-import channelsRouter from './routes/channels'; 
-import { testConnection } from '../src/services/database/index';
+import channelsRouter from './routes/channels';
+import { testConnection } from './services/database/index';
 
 dotenv.config();
 
