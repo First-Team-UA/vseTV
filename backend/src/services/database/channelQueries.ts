@@ -6,12 +6,12 @@ interface Channel extends RowDataPacket {
   name_ua: string;
   names_alternative: string;
   schedule_language_id: number;
-  schedule_special_type: string;
-  region: string;
-  tiedtoid: string;
+  schedule_special_type: number;
+  region: number;
+  tiedtoid: number;
   description: string;
-  logo: string;
-  active: boolean;
+  logo: number;
+  active: number;
 }
 
 export async function getChannels(): Promise<Channel[]> {

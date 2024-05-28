@@ -8,12 +8,12 @@ interface Channel {
   name_ua: string;
   names_alternative: string;
   schedule_language_id: number;
-  schedule_special_type: string;
-  region: string;
-  tiedtoid: string;
+  schedule_special_type: number;
+  region: number;
+  tiedtoid: number;
   description: string;
-  logo: string;
-  active: boolean;
+  logo: number;
+  active: number;
 }
 
 let cachedChannels: Channel[] = [];
@@ -34,7 +34,11 @@ router.get("/", (req: Request, res: Response) => {
 
 router.get("/region/:region", (req: Request, res: Response) => {
   const { region } = req.params;
-  const channelsByRegion = cachedChannels.filter(channel => channel.region === region);
+  const regionNumber = parseInt(region);
+  if (isNaN(regionNumber)) {
+    return res.status(400).json({ error: "Invalid region" });
+  }
+  const channelsByRegion = cachedChannels.filter(channel => channel.region === regionNumber);
   res.json(channelsByRegion);
 });
 
@@ -46,14 +50,18 @@ router.get("/name/:name", (req: Request, res: Response) => {
 
 router.get("/language/:languageId", (req: Request, res: Response) => {
   const { languageId } = req.params;
-  const channelsByLanguage = cachedChannels.filter(channel => channel.schedule_language_id === parseInt(languageId));
+  const languageIdNumber = parseInt(languageId);
+  if (isNaN(languageIdNumber)) {
+    return res.status(400).json({ error: "Invalid language ID" });
+  }
+  const channelsByLanguage = cachedChannels.filter(channel => channel.schedule_language_id === languageIdNumber);
   res.json(channelsByLanguage);
 });
 
 router.get("/active/:status", (req: Request, res: Response) => {
   const { status } = req.params;
-  const isActive = status.toLowerCase() === 'true';
-  const activeChannels = cachedChannels.filter(channel => channel.active === isActive);
+  const isActive = status === '1';
+  const activeChannels = cachedChannels.filter(channel => channel.active === (isActive ? 1 : 0));
   res.json(activeChannels);
 });
 
@@ -68,7 +76,11 @@ router.get("/alternative-name/:name", (req: Request, res: Response) => {
 
 router.get("/special-type/:type", (req: Request, res: Response) => {
   const { type } = req.params;
-  const channelsBySpecialType = cachedChannels.filter(channel => channel.schedule_special_type === type);
+  const specialTypeNumber = parseInt(type);
+  if (isNaN(specialTypeNumber)) {
+    return res.status(400).json({ error: "Invalid special type" });
+  }
+  const channelsBySpecialType = cachedChannels.filter(channel => channel.schedule_special_type === specialTypeNumber);
   res.json(channelsBySpecialType);
 });
 
@@ -82,9 +94,25 @@ router.get("/description/:desc", (req: Request, res: Response) => {
 // Пошук за прив'язкою 
 
 router.get("/tiedtoid/:tiedtoid", (req: Request, res: Response) => {
-  const { tiedtoed } = req.params;
-  const channelsByTiedtoed = cachedChannels.filter(channel => channel.tiedtoid === tiedtoed);
+  const { tiedtoid } = req.params;
+  const tiedtoedNumber = parseInt(tiedtoid);
+  if (isNaN(tiedtoedNumber)) {
+    return res.status(400).json({ error: "Invalid tiedtoid value" });
+  }
+  const channelsByTiedtoed = cachedChannels.filter(channel => channel.tiedtoid === tiedtoedNumber);
   res.json(channelsByTiedtoed);
+});
+ 
+// Пошук за лого 
+
+router.get("/logo/:logo", (req: Request, res: Response) => {
+  const { logo } = req.params;
+  const logoNumber = parseInt(logo);
+  if (isNaN(logoNumber)) {
+    return res.status(400).json({ error: "Invalid logo value" });
+  }
+  const channelsByLogo = cachedChannels.filter(channel => channel.logo === logoNumber);
+  res.json(channelsByLogo);
 });
 
 export default router;
