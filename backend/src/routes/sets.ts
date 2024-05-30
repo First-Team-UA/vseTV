@@ -1,13 +1,10 @@
-import { Request, Response, Router } from "express"
-
-import { getSetChannels } from "../controllers/sets/sets"
+import { getSetChannels } from '../controllers/sets/sets';
+import { Request, Response, Router } from 'express';
 
 // import { getChannels } from "../services/database/channelQueries"
 
-const setsRouter = Router()
+const setsRouter = Router();
 
-setsRouter.get("/:setID/channels", getSetChannels)
+setsRouter.get('/:setID/channels', getSetChannels);
 
-
-
-export default setsRouter
+export default setsRouter;
