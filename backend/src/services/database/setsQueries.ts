@@ -1,17 +1,18 @@
 import pool from './index';
 import { RowDataPacket } from 'mysql2';
 
-
 interface SetChannels extends RowDataPacket {
   channel: number;
   export_id: number;
   export_ctag: string;
 }
 
-export async function getSetChannels(): Promise<SetChannels[]> {
+// Взяти всі канали, які є в наборі № ...
+export async function getSetChannels(id:number): Promise<SetChannels[]> {
   try {
     const [rows] = await pool.query<SetChannels[]>(
-      'SELECT * FROM clients_set_channels',
+      'SELECT * FROM clients_set_channels WHERE set_id = ?',
+      [id],
     );
     return rows;
   } catch (error) {
@@ -19,3 +20,17 @@ export async function getSetChannels(): Promise<SetChannels[]> {
     return [];
   }
 }
+
+// Оновити канали в наборі
+
+// export async function updateSetChannels(): Promise<SetChannels[]> {
+//   try {
+//     const [rows] = await pool.query<SetChannels[]>(
+//       'SELECT * FROM clients_set_channels',
+//     );
+//     return rows;
+//   } catch (error) {
+//     console.error('Error executing query', error);
+//     return [];
+//   }
+// }
