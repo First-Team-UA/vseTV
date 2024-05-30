@@ -1,17 +1,18 @@
 import pool from './index';
 import { RowDataPacket } from 'mysql2';
 
-interface ClientSets extends RowDataPacket {
+
+interface SetChannels extends RowDataPacket {
   channel: number;
   export_id: number;
   export_ctag: string;
 }
 
-const querySetChannels = 'SELECT * FROM clients_set_channels';
-
-export async function clientSets(): Promise<ClientSets[]> {
+export async function getSetChannels(): Promise<SetChannels[]> {
   try {
-    const [rows] = await pool.query<ClientSets[]>(querySetChannels);
+    const [rows] = await pool.query<SetChannels[]>(
+      'SELECT * FROM clients_set_channels',
+    );
     return rows;
   } catch (error) {
     console.error('Error executing query', error);
