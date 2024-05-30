@@ -1,18 +1,22 @@
 import dotenv from 'dotenv';
-import express, { Request, Response, NextFunction} from 'express';
-import indexRouter from './routes/index';
-import clientsRouter from './routes/clients';
-import channelsRouter from './routes/channels';
-import { testConnection } from './services/database/index';
-import HttpError from './helpers/HttpError';
+import express, { NextFunction, Request, Response } from 'express';
 
+
+
+import HttpError from './helpers/HttpError';
+import channelsRouter from './routes/channels';
+import clientsRouter from './routes/clients';
+import indexRouter from './routes/index';
+import { testConnection } from './services/database/index';
+import setsRouter from './routes/sets';
 
 const app = express();
 const port = process.env.PORT || 4000;
 
 app.use("/", indexRouter);
 app.use("/clients", clientsRouter);
-app.use("/channels", channelsRouter);
+app.use("/channels", channelsRouter)
+app.use("/api/sets", setsRouter)
 
 app.use((err: HttpError, req: Request, res: Response,next: NextFunction) => {
   if (err instanceof HttpError) {
