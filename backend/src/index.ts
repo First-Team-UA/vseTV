@@ -13,12 +13,14 @@ import setsRouter from './routes/sets';
 const app = express();
 const port = process.env.PORT || 4000;
 
+app.use(express.json())
+
 app.use("/", indexRouter);
 app.use("/clients", clientsRouter);
 app.use("/channels", channelsRouter)
 app.use("/api/sets", setsRouter)
 
-app.use((err: HttpError, req: Request, res: Response,next: NextFunction) => {
+app.use((err: HttpError, req: Request, res: Response,next: NextFunction):void => {
   if (err instanceof HttpError) {
     res.status(err.status).json({ message: err.message });
   } else {
