@@ -3,6 +3,7 @@ import ctrlWrapper from "../../helpers/ctrlWrapper";
 import HttpError from "../../helpers/HttpError";
 import hashing from "../../helpers/hashing";
 import { Client, getClientById, getClients, updateClientInfo, updatePassword } from "../../services/database/clientsQueries";
+import sendEmail from "../../helpers/sendMail";
 
 
 const getClientsInfo = async(req: Request, res: Response):Promise<void> => {
@@ -53,7 +54,7 @@ const changePassword = async (req: Request, res: Response): Promise<void> => {
   const { id } = req.params;
   const { oldPassword, newPassword } = req.body;
 
-  const {password} = await getClientById(Number(id)) as Client;
+  const { contact_email_tech, password} = await getClientById(Number(id)) as Client;
 
   const passwordCompare = await hashing.comparePasswords(oldPassword, password!)
 
@@ -61,8 +62,17 @@ const changePassword = async (req: Request, res: Response): Promise<void> => {
   
   const hashPassword = await hashing.hashPassword(newPassword)
 
+  const date = getDate()
+
+  const mailContent = {
+    to: contact_email_tech,
+    subject: "Changing password",
+    html:`<p>Your password has been changed successfully at ${date}</p>`
+  }
+
   try {
     await updatePassword(Number(id), hashPassword)
+    await sendEmail(mailContent)
     res.status(200).json("The password has been successfully updated")
   } catch (error) {
     const err = new HttpError(404, "Client not found")
