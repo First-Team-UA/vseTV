@@ -8,36 +8,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getChannels = void 0;
-const index_1 = __importDefault(require("./index"));
-function getChannels() {
-    return __awaiter(this, void 0, void 0, function* () {
+const ctrlWrapper = (ctrl) => {
+    return (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
         try {
-            const query = `
-      SELECT 
-        name, 
-        name_ua, 
-        names_alternative, 
-        schedule_language_id, 
-        schedule_special_type, 
-        region, 
-        tiedtoid, 
-        description, 
-        logo, 
-        active 
-      FROM channels
-    `;
-            const [rows] = yield index_1.default.query(query);
-            return rows;
+            yield ctrl(req, res, next);
         }
         catch (error) {
-            console.error("Error fetching channels:", error);
-            throw error;
+            next(error);
         }
     });
-}
-exports.getChannels = getChannels;
+};
+exports.default = ctrlWrapper;
