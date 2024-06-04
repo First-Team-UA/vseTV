@@ -22,4 +22,6 @@ const checkToken = (token:string) => {
 	}
 };
 
-export default { checkToken, signToken };
+const jwtHandling = { checkToken, signToken };
+
+export default jwtHandling

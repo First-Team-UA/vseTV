@@ -5,4 +5,6 @@ const hashPassword = (password:string, salt:number = 10):Promise<string> => bcry
 const comparePasswords = (incoming:string, present:string):Promise<boolean> => bcrypt.compare(incoming, present);
 
 
-export default { hashPassword, comparePasswords };
+const hashing = { hashPassword, comparePasswords };
+
+export default hashing
