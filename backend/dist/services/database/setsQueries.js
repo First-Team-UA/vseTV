@@ -12,32 +12,31 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getChannels = void 0;
+exports.getSetChannels = void 0;
 const index_1 = __importDefault(require("./index"));
-function getChannels() {
+// Взяти всі канали, які є в наборі № ...
+function getSetChannels(id) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const query = `
-      SELECT 
-        name, 
-        name_ua, 
-        names_alternative, 
-        schedule_language_id, 
-        schedule_special_type, 
-        region, 
-        tiedtoid, 
-        description, 
-        logo, 
-        active 
-      FROM channels
-    `;
-            const [rows] = yield index_1.default.query(query);
+            const [rows] = yield index_1.default.query('SELECT * FROM clients_set_channels WHERE set_id = ?', [id]);
             return rows;
         }
         catch (error) {
-            console.error("Error fetching channels:", error);
-            throw error;
+            console.error('Error executing query', error);
+            return [];
         }
     });
 }
-exports.getChannels = getChannels;
+exports.getSetChannels = getSetChannels;
+// Оновити канали в наборі
+// export async function updateSetChannels(): Promise<SetChannels[]> {
+//   try {
+//     const [rows] = await pool.query<SetChannels[]>(
+//       'SELECT * FROM clients_set_channels',
+//     );
+//     return rows;
+//   } catch (error) {
+//     console.error('Error executing query', error);
+//     return [];
+//   }
+// }

@@ -33,6 +33,7 @@
     "format:check": "npm run format:check:frontend && npm run format:check:backend"
   },
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
     "@radix-ui/react-slot": "^1.0.2",
     "@types/bcrypt": "^5.0.2",
     "@types/express-serve-static-core": "^4.19.1",
