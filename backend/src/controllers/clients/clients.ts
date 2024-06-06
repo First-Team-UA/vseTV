@@ -67,7 +67,7 @@ const changePassword = async (req: Request, res: Response): Promise<void> => {
   const mailContent = {
     to: contact_email_tech,
     subject: "Changing password",
-    html:`<p>Your password has been changed successfully at ${date}</p>`
+    html:`<p> Ваш пароль был успешно изменен ${date}!</p>`
   }
 
   try {

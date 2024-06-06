@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer'
 const {MAIL_EMAIL, MAIL_PASS} = process.env
 
 const nodemailerConfig = {
-  host: "smtp.ukr.net",
+  host: "smtp.seznam.cz",
   port: 465,
   secure: true,
   auth: {
@@ -24,7 +24,7 @@ interface IData {
 }
 
 const sendEmail = async (data:IData) => {
-  const email = { ...data, from: "cheekygeroin@ukr.net" };
+  const email = { ...data, from: `${MAIL_EMAIL}` };
   await transport.sendMail(email);
   return true;
 };
