@@ -10,7 +10,7 @@ interface ClientAuth extends RowDataPacket {
   token: string;
 }
 
-// Прийняти логін і пароль, повернути аутентифікаційні данні
+// Прийняти логін і пароль, повернути об'єкт даних
 export async function getAuth(
   login: string,
   password: string,
@@ -32,6 +32,21 @@ export async function getAuth(
   }
 }
 
+export async function sendToken(
+  id: string,
+  token: string,
+): Promise<any | null> {
+  try {
+    const [result]: [any, any] = await pool.query(
+      'UPDATE clients_auth SET token = ? WHERE id = ?',
+      [token, id],
+    );
+    return result;
+  } catch (error) {
+    console.error('Error executing query', error);
+    return null;
+  }
+}
 // const [rows] = await pool.query<ClientAuth[]>(
 //   'SELECT * FROM clients_auth WHERE id = ?',
 //   [id],
