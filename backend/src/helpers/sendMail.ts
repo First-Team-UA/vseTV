@@ -18,7 +18,7 @@ const nodemailerConfig = {
 const transport = nodemailer.createTransport(nodemailerConfig);
 
 interface IData {
-    to: string,
+    to: string[],
     subject: string,
     html:string
 }
