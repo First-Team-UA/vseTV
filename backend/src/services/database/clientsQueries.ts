@@ -8,10 +8,10 @@ import { RowDataPacket } from 'mysql2';
 interface Clients extends RowDataPacket {
   id: number;
   name: string;
-  contact_email_tech: string;
-  contact_email_fin: string;
-  contact_tel_tech: string;
-  contact_tel_fin: string;
+  contact_email_tech: string[];
+  contact_email_fin: string[];
+  contact_tel_tech: string[];
+  contact_tel_fin: string[];
   token: string;
   active:number
 }
@@ -19,20 +19,20 @@ interface Clients extends RowDataPacket {
 export interface Client extends RowDataPacket {
   id: number;
   name: string;
-  contact_email_tech: string;
-  contact_email_fin: string;
-  contact_tel_tech: string;
-  contact_tel_fin: string;
+  contact_email_tech: string[];
+  contact_email_fin: string[];
+  contact_tel_tech: string[];
+  contact_tel_fin: string[];
   token: string;
   active: number;
   password?:string
 }
 interface Update{
   name?: string;
-  contact_email_tech?: string;
-  contact_email_fin?: string;
-  contact_tel_tech?: string;
-  contact_tel_fin?: string;
+  contact_email_tech?: string[];
+  contact_email_fin?: string[];
+  contact_tel_tech?: string[];
+  contact_tel_fin?: string[];
 }
 
 

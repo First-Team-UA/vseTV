@@ -9,7 +9,7 @@ import dotenv from 'dotenv';
 import express, { NextFunction, Request, Response } from 'express';
 import swaggerUi from "swagger-ui-express";
 
-const swaggerDocument = require("./swagger.json");
+const swaggerDocument = require("../swagger.json");
 const app = express();
 const port = process.env.PORT || 4000;
 

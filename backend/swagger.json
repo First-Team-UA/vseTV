@@ -201,23 +201,25 @@
         "summary": "Change old password",
         "security": [{ "Bearer": [] }],
         "parameters": [],
-        "requestBody":{
-            "description":"Change password",
-            "required":true,
-            "content":{
-                "application/json":{
-                    "schema":{
-                        "$ref":"#/components/schemas/ChangeClientPasswordRequest"
-                        }}   
+        "requestBody": {
+          "description": "Change password",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeClientPasswordRequest"
+              }
             }
+          }
         },
         "responses": {
           "200": {
             "description": "Successful operation",
             "content": {
               "application/json": {
-                "schema": { 
-                    "$ref": "#/components/schemas/ChangeClientPasswordResponce" }
+                "schema": {
+                  "$ref": "#/components/schemas/ChangeClientPasswordResponce"
+                }
               }
             }
           },
@@ -764,46 +766,58 @@
             "example": "Иван"
           },
           "contact_email_tech": {
-            "type": "string",
-            "description": "New client's tech email",
-            "format": "email",
-            "example": "mainuser@gmail.com"
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "New client's tech email",
+              "format": "email",
+              "example": "mainuser@gmail.com, mainuser2@gmail.com"
+            }
           },
           "contact_email_fin": {
-            "type": "string",
-            "description": "New client's fin email",
-            "format": "email",
-            "example": "mainuser@gmail.com"
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "New client's fin email",
+              "format": "email",
+              "example": "mainuser@gmail.com, mainuser2@gmail.com"
+            }
           },
           "contact_tel_tech": {
-            "type": "string",
-            "description": "New client's tech telephone",
-            "format": "tel",
-            "example": "+380939393939"
+            "type": "array",
+            "items": {
+              "type":"string",
+              "description": "New client's tech telephone",
+              "format": "tel",
+              "example": "+380939393939,+380939393938"
+            }
           },
           "contact_tel_fin": {
-            "type": "string",
-            "description": "New client's fin telephone",
-            "format": "tel",
-            "example": "+380939393939"
+            "type": "array",
+            "items": {
+              "type":"string",
+              "description": "New client's fin telephone",
+              "format": "tel",
+              "example": "+380939393939,+380939393938"
+            }
           }
         }
       },
-      "ChangeClientPasswordRequest":{
-        "type":"object",
-        "properties":{
-            "oldPassword":{
-                "type": "string",
-				"format": "password",
-				"description": "Outdated password",
-				"example": "qwerty123"
-            },
-            "newPassword":{
-                "type": "string",
-				"format": "password",
-				"description": "New password",
-				"example": "qwerty1234"
-            }
+      "ChangeClientPasswordRequest": {
+        "type": "object",
+        "properties": {
+          "oldPassword": {
+            "type": "string",
+            "format": "password",
+            "description": "Outdated password",
+            "example": "qwerty123"
+          },
+          "newPassword": {
+            "type": "string",
+            "format": "password",
+            "description": "New password",
+            "example": "qwerty1234"
+          }
         }
       },
       "GetWaterUseHistoryTodayRequest": {
@@ -825,29 +839,41 @@
             "description": "Client's name",
             "example": "Иван"
           },
-          "contact_email_tech": {
-            "type": "string",
-            "description": "Client's tech email",
-            "format": "email",
-            "example": "mainuser@gmail.com"
+           "contact_email_tech": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "New client's tech email",
+              "format": "email",
+              "example": "mainuser@gmail.com, mainuser2@gmail.com"
+            }
           },
           "contact_email_fin": {
-            "type": "string",
-            "description": "Client's fin email",
-            "format": "email",
-            "example": "mainuser@gmail.com"
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "New client's fin email",
+              "format": "email",
+              "example": "mainuser@gmail.com, mainuser2@gmail.com"
+            }
           },
           "contact_tel_tech": {
-            "type": "string",
-            "description": "Client's tech telephone",
-            "format": "tel",
-            "example": "+380939393939"
+            "type": "array",
+            "items": {
+              "type":"string",
+              "description": "New client's tech telephone",
+              "format": "tel",
+              "example": "+380939393939,+380939393938"
+            }
           },
           "contact_tel_fin": {
-            "type": "string",
-            "description": "Client's fin telephone",
-            "format": "tel",
-            "example": "+380939393939"
+            "type": "array",
+            "items": {
+              "type":"string",
+              "description": "New client's fin telephone",
+              "format": "tel",
+              "example": "+380939393939,+380939393938"
+            }
           }
         }
       },
@@ -859,39 +885,51 @@
             "description": "New client's name",
             "example": "Иван"
           },
-          "contact_email_tech": {
-            "type": "string",
-            "description": "New client's tech email",
-            "format": "email",
-            "example": "mainuser@gmail.com"
+           "contact_email_tech": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "New client's tech email",
+              "format": "email",
+              "example": "mainuser@gmail.com, mainuser2@gmail.com"
+            }
           },
           "contact_email_fin": {
-            "type": "string",
-            "description": "New client's fin email",
-            "format": "email",
-            "example": "mainuser@gmail.com"
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "New client's fin email",
+              "format": "email",
+              "example": "mainuser@gmail.com, mainuser2@gmail.com"
+            }
           },
           "contact_tel_tech": {
-            "type": "string",
-            "description": "New client's tech telephone",
-            "format": "tel",
-            "example": "+380939393939"
+            "type": "array",
+            "items": {
+              "type":"string",
+              "description": "New client's tech telephone",
+              "format": "tel",
+              "example": "+380939393939,+380939393938"
+            }
           },
           "contact_tel_fin": {
-            "type": "string",
-            "description": "New client's fin telephone",
-            "format": "tel",
-            "example": "+380939393939"
+            "type": "array",
+            "items": {
+              "type":"string",
+              "description": "New client's fin telephone",
+              "format": "tel",
+              "example": "+380939393939,+380939393938"
+            }
           }
         }
       },
-      "ChangeClientPasswordResponce":{
-        "type":"object",
-        "properties":{
-            "message":{
-                "type":"string",
-                "example":"The password has been successfully updated"
-            }
+      "ChangeClientPasswordResponce": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "example": "The password has been successfully updated"
+          }
         }
       },
       "GetWaterUseHistoryTodayResponce": {
