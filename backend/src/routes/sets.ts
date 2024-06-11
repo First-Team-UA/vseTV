@@ -1,4 +1,4 @@
-import { SetChannels, UpdateSet } from '../controllers/sets/sets';
+import {setControllers} from '../controllers/sets/sets';
 import { Request, Response, Router } from 'express';
 
 
@@ -6,7 +6,7 @@ import { Request, Response, Router } from 'express';
 
 const setsRouter = Router();
 
-setsRouter.get('/:setId/channels', SetChannels);
-setsRouter.post('/:setId/update', UpdateSet);
+setsRouter.get('/:setId/channels', setControllers.setChannels);
+setsRouter.post('/:setId/update', setControllers.updateSet);
 
 export default setsRouter;
