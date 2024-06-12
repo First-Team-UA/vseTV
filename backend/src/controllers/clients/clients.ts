@@ -54,7 +54,7 @@ const changePassword = async (req: Request, res: Response): Promise<void> => {
   const { id } = req.params;
   const { oldPassword, newPassword } = req.body;
 
-  const { contact_email_tech, password} = await getClientById(Number(id)) as Client;
+  const { contact_email_tech, contact_email_fin,password} = await getClientById(Number(id)) as Client;
 
   const passwordCompare = await hashing.comparePasswords(oldPassword, password!)
 
@@ -64,9 +64,11 @@ const changePassword = async (req: Request, res: Response): Promise<void> => {
 
   const date = getDate()
 
+  const combinedMails = `${contact_email_tech}, ${contact_email_fin}` 
+
   const mailContent = {
-    to: contact_email_tech,
-    subject: "Changing password",
+    to: combinedMails,
+    subject: "Изменение пароля",
     html:`<p> Ваш пароль был успешно изменен ${date}!</p>`
   }
 

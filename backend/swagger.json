@@ -766,40 +766,28 @@
             "example": "Иван"
           },
           "contact_email_tech": {
-            "type": "array",
-            "items": {
-              "type": "string",
+            "type": "string",
               "description": "New client's tech email",
               "format": "email",
               "example": "mainuser@gmail.com, mainuser2@gmail.com"
-            }
           },
           "contact_email_fin": {
-            "type": "array",
-            "items": {
-              "type": "string",
+           "type": "string",
               "description": "New client's fin email",
               "format": "email",
               "example": "mainuser@gmail.com, mainuser2@gmail.com"
-            }
           },
           "contact_tel_tech": {
-            "type": "array",
-            "items": {
-              "type":"string",
+            "type":"string",
               "description": "New client's tech telephone",
               "format": "tel",
               "example": "+380939393939,+380939393938"
-            }
           },
           "contact_tel_fin": {
-            "type": "array",
-            "items": {
-              "type":"string",
+             "type":"string",
               "description": "New client's fin telephone",
               "format": "tel",
               "example": "+380939393939,+380939393938"
-            }
           }
         }
       },
@@ -840,40 +828,28 @@
             "example": "Иван"
           },
            "contact_email_tech": {
-            "type": "array",
-            "items": {
-              "type": "string",
+           "type": "string",
               "description": "New client's tech email",
               "format": "email",
               "example": "mainuser@gmail.com, mainuser2@gmail.com"
-            }
           },
           "contact_email_fin": {
-            "type": "array",
-            "items": {
-              "type": "string",
+            "type": "string",
               "description": "New client's fin email",
               "format": "email",
               "example": "mainuser@gmail.com, mainuser2@gmail.com"
-            }
           },
           "contact_tel_tech": {
-            "type": "array",
-            "items": {
-              "type":"string",
+             "type":"string",
               "description": "New client's tech telephone",
               "format": "tel",
               "example": "+380939393939,+380939393938"
-            }
           },
           "contact_tel_fin": {
-            "type": "array",
-            "items": {
-              "type":"string",
+             "type":"string",
               "description": "New client's fin telephone",
               "format": "tel",
               "example": "+380939393939,+380939393938"
-            }
           }
         }
       },
@@ -886,40 +862,28 @@
             "example": "Иван"
           },
            "contact_email_tech": {
-            "type": "array",
-            "items": {
-              "type": "string",
+            "type": "string",
               "description": "New client's tech email",
               "format": "email",
               "example": "mainuser@gmail.com, mainuser2@gmail.com"
-            }
           },
           "contact_email_fin": {
-            "type": "array",
-            "items": {
-              "type": "string",
+           "type": "string",
               "description": "New client's fin email",
               "format": "email",
               "example": "mainuser@gmail.com, mainuser2@gmail.com"
-            }
           },
           "contact_tel_tech": {
-            "type": "array",
-            "items": {
-              "type":"string",
+             "type":"string",
               "description": "New client's tech telephone",
               "format": "tel",
               "example": "+380939393939,+380939393938"
-            }
           },
           "contact_tel_fin": {
-            "type": "array",
-            "items": {
-              "type":"string",
+             "type":"string",
               "description": "New client's fin telephone",
               "format": "tel",
               "example": "+380939393939,+380939393938"
-            }
           }
         }
       },
