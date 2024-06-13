@@ -5,6 +5,9 @@ import Link from 'next/link';
 const Sidebar = () => {
   return (
     <header>
+      <Link href="/">
+              Logo
+            </Link>
       <nav>
         <ul>
           <li>
@@ -33,7 +36,9 @@ const Sidebar = () => {
             </Link>
           </li>
         </ul>
+        
       </nav>
+      <button>Logaut</button>
     </header>
   );
 };

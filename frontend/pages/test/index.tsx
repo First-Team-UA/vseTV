@@ -1,10 +1,11 @@
+import Layout from "../layout";
 
 
 const Test = () => {
     return (
-<div>
+<Layout>
 <h1>test</h1>
-</div>
+</Layout>
     );
 };
 

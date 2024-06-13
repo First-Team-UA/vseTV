@@ -1,10 +1,11 @@
-
+import Layout from "../layout";
 
 const Channel = () => {
     return (
-<div>
+<Layout>
+
  <h1>channels</h1>
-</div>
+</Layout>
     );
 };
 
