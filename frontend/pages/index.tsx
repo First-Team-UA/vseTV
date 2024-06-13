@@ -1,5 +1,5 @@
 import Layout from "./layout";
-import Dashboard from "./DashboardPage";
+import Dashboard from "./dashboard/index";
 
 const IndexPage = () => {
  

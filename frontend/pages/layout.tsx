@@ -1,6 +1,6 @@
 
 import React, { ReactNode } from 'react';
-import Header from '../Components/Header';
+import Sidebar from '../Components/Sidebar';
 
 type LayoutProps = {
   children: ReactNode;
@@ -10,10 +10,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div>
       <header>
-        <Header />
+        
       </header>
       <aside>
-        
+        <Sidebar />
       </aside>
       <main>
         {children}

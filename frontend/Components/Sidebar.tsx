@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-const Header = () => {
+const Sidebar = () => {
   return (
     <header>
       <nav>
@@ -38,4 +38,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Sidebar;
