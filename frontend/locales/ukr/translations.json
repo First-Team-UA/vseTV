@@ -1,0 +1,12 @@
+{
+    "profileContactHeader":"Мої контакти",
+    "changePasswordHeader":"Змінити пароль для доступу",
+    "tecnEmails":"Технічний email",
+    "techTel":"Технічний телефон",
+    "finEmails":"Фінансовий email",
+    "finTel":"Фінансовий телефон",
+    "password":"Пароль",
+    "newPassword":"Новий пароль",
+    "confirm":"Підтвердити",
+    "profileButton":"Зберігти"
+}
