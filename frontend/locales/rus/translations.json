@@ -1,0 +1,12 @@
+{
+    "profileContactHeader":"Мои контакты",
+    "changePasswordHeader":"Изменить пароль для доступа",
+    "tecnEmails":"Технический email",
+    "techTel":"Технический телефон",
+    "finEmails":"Финансовый email",
+    "finTel":"Финансовый телефон",
+    "password":"Пароль",
+    "newPassword":"Новый пароль",
+    "confirm":"Подтвердить",
+    "profileButton":"Сохранить"
+}
