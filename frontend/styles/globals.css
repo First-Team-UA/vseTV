@@ -2,6 +2,232 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Визначення змінних CSS */
+:root {
+  --color-primary: #6B09E8;        /* Фіолетовий */
+  --color-secondary: #7E5EFF;      /* Ліловий */
+  --color-tertiary: #110178;       /* Темно-фіолетовий */
+  --color-quaternary: #6C6BA1;     /* Світло-фіолетовий */
+  --color-overlay: rgba(126, 94, 255, 0.30);  /* Фонове перекриття */
+  --color-bg-light: rgba(255, 255, 255, 0.60);  /* Світлий фон */
+  --color-text-light: #AFB0D0;     /* Світло-сірий текст */
+  --color-text-dark: #110178;      /* Темно-фіолетовий текст */
+  --color-text-white: #FFFFFF;     /* Білий текст */
+  --color-orange: #FF8500;         /* Помаранчевий */
+  --shadow-light: 0px 4px 20px 0px rgba(65, 20, 158, 0.10);  /* Світла тінь */
+  --border-radius: 40px;           /* Радіус границь */
+}
+
+/* Застосування стилів до body */
 body {
-  @apply bg-gray-100;
+  @apply bg-gray-100 text-white;
+  font-family: var(--font-roboto);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-roboto);
+}
+
+.red-hat-display {
+  font-family: var(--font-red-hat);
+}
+
+/* Використання змінних для розмірів шрифтів */
+.font-roboto-12 {
+  font-size: var(--font-size-12);
+}
+
+.font-roboto-14 {
+  font-size: var(--font-size-14);
+}
+
+.font-roboto-16 {
+  font-size: var(--font-size-16);
+}
+
+.font-roboto-18 {
+  font-size: var(--font-size-18);
+}
+
+.font-roboto-24 {
+  font-size: var(--font-size-24);
+}
+
+.font-red-hat-18 {
+  font-size: var(--font-size-18);
+}
+
+/* Застосування кольорів */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.text-tertiary {
+  color: var(--color-tertiary);
+}
+
+.bg-tertiary {
+  background-color: var(--color-tertiary);
+}
+
+.text-quaternary {
+  color: var(--color-quaternary);
+}
+
+.bg-quaternary {
+  background-color: var(--color-quaternary);
+}
+
+.bg-overlay {
+  background-color: var(--color-overlay);
+}
+
+.bg-light {
+  background-color: var(--color-bg-light);
+}
+
+.text-light {
+  color: var(--color-text-light);
+}
+
+.text-dark {
+  color: var(--color-text-dark);
+}
+
+.text-white {
+  color: var(--color-text-white);
+}
+
+.text-orange {
+  color: var(--color-orange);
+}
+
+/* Застосування тіней та радіусів */
+.shadow-light {
+  box-shadow: var(--shadow-light);
+}
+
+.rounded-lg {
+  border-radius: var(--border-radius);
+}
+
+/* Інші стилі */
+*,
+*::before,
+*::after {
+  @apply box-border;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: #FFF;
+  line-height: 1.6;
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  @apply text-blue-600 no-underline;
+}
+
+a:hover {
+  @apply underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
+  color: #FFF;
+}
+
+p {
+  margin: 0 0 1em 0;
+}
+
+ul, ol {
+  padding-left: 1.5em;
+  margin: 0 0 1em 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.flex {
+  @apply flex;
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-column {
+  @apply flex flex-col;
+}
+
+.text-center {
+  @apply text-center;
+}
+
+.mt-1 { @apply mt-4; }
+.mt-2 { @apply mt-8; }
+.mt-3 { @apply mt-12; }
+
+.mb-1 { @apply mb-4; }
+.mb-2 { @apply mb-8; }
+.mb-3 { @apply mb-12; }
+
+.pt-1 { @apply pt-4; }
+.pt-2 { @apply pt-8; }
+.pt-3 { @apply pt-12; }
+
+.pb-1 { @apply pb-4; }
+.pb-2 { @apply pb-8; }
+.pb-3 { @apply pb-12; }
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f5f5f5;
 }
