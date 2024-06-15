@@ -1,4 +1,4 @@
-import Layout from "../layout";
+import Layout from "../components/Layout/layout";
 
 const Channel = () => {
     return (
