@@ -1,4 +1,4 @@
-import Layout from "./layout";
+import Layout from "../Components/Layout/layout";
 import Dashboard from "./dashboard/index";
 
 const IndexPage = () => {
