@@ -2,12 +2,128 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Tailwind utility class for body background */
-body {
-  @apply bg-gray-100;
+/* Визначення змінних CSS */
+:root {
+  --color-primary: #6B09E8;        /* Фіолетовий */
+  --color-secondary: #7E5EFF;      /* Ліловий */
+  --color-tertiary: #110178;       /* Темно-фіолетовий */
+  --color-quaternary: #6C6BA1;     /* Світло-фіолетовий */
+  --color-overlay: rgba(126, 94, 255, 0.30);  /* Фонове перекриття */
+  --color-bg-light: rgba(255, 255, 255, 0.60);  /* Світлий фон */
+  --color-text-light: #AFB0D0;     /* Світло-сірий текст */
+  --color-text-dark: #110178;      /* Темно-фіолетовий текст */
+  --color-text-white: #FFFFFF;     /* Білий текст */
+  --color-orange: #FF8500;         /* Помаранчевий */
+  --shadow-light: 0px 4px 20px 0px rgba(65, 20, 158, 0.10);  /* Світла тінь */
+  --border-radius: 40px;           /* Радіус границь */
 }
 
-/* Reset some default browser styles */
+/* Застосування стилів до body */
+body {
+  @apply bg-gray-100 text-white;
+  font-family: var(--font-roboto);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-roboto);
+}
+
+.red-hat-display {
+  font-family: var(--font-red-hat);
+}
+
+/* Використання змінних для розмірів шрифтів */
+.font-roboto-12 {
+  font-size: var(--font-size-12);
+}
+
+.font-roboto-14 {
+  font-size: var(--font-size-14);
+}
+
+.font-roboto-16 {
+  font-size: var(--font-size-16);
+}
+
+.font-roboto-18 {
+  font-size: var(--font-size-18);
+}
+
+.font-roboto-24 {
+  font-size: var(--font-size-24);
+}
+
+.font-red-hat-18 {
+  font-size: var(--font-size-18);
+}
+
+/* Застосування кольорів */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.text-tertiary {
+  color: var(--color-tertiary);
+}
+
+.bg-tertiary {
+  background-color: var(--color-tertiary);
+}
+
+.text-quaternary {
+  color: var(--color-quaternary);
+}
+
+.bg-quaternary {
+  background-color: var(--color-quaternary);
+}
+
+.bg-overlay {
+  background-color: var(--color-overlay);
+}
+
+.bg-light {
+  background-color: var(--color-bg-light);
+}
+
+.text-light {
+  color: var(--color-text-light);
+}
+
+.text-dark {
+  color: var(--color-text-dark);
+}
+
+.text-white {
+  color: var(--color-text-white);
+}
+
+.text-orange {
+  color: var(--color-orange);
+}
+
+/* Застосування тіней та радіусів */
+.shadow-light {
+  box-shadow: var(--shadow-light);
+}
+
+.rounded-lg {
+  border-radius: var(--border-radius);
+}
+
+/* Інші стилі */
 *,
 *::before,
 *::after {
@@ -16,19 +132,12 @@ body {
   padding: 0;
 }
 
-/* Basic global styles */
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  color: #333; /* Dark text color */
+  color: #FFF;
   line-height: 1.6;
   font-size: 16px;
-}
-
-/* Ensuring 100% height for html and body */
-html {
   height: 100%;
 }
 
@@ -38,7 +147,6 @@ body {
   flex-direction: column;
 }
 
-/* Links */
 a {
   @apply text-blue-600 no-underline;
 }
@@ -47,25 +155,21 @@ a:hover {
   @apply underline;
 }
 
-/* Headings */
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-weight: 600;
-  color: #111;
+  color: #FFF;
 }
 
-/* Paragraphs */
 p {
   margin: 0 0 1em 0;
 }
 
-/* Lists */
 ul, ol {
   padding-left: 1.5em;
   margin: 0 0 1em 0;
 }
 
-/* Utility classes */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -104,11 +208,7 @@ ul, ol {
 .pb-2 { @apply pb-8; }
 .pb-3 { @apply pb-12; }
 
-/* Form elements */
-input,
-button,
-textarea,
-select {
+input, button, textarea, select {
   font: inherit;
 }
 
@@ -116,7 +216,6 @@ button {
   cursor: pointer;
 }
 
-/* Tables */
 table {
   width: 100%;
   border-collapse: collapse;
