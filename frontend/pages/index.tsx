@@ -5,7 +5,7 @@ const IndexPage = () => {
  
   return (
   <Layout>
-    <Dashboard></Dashboard>
+    <Dashboard/>
   </Layout>
 
   );

@@ -1,6 +1,6 @@
-import ContactInfoForm from "@frontend/Components/Profile/contactInfoForm";
+import ContactInfoForm from "@frontend/сomponents/Profile/contactInfoForm";
 import Layout from "../layout";
-import ChangePasswordForm from "@frontend/Components/Profile/changePasswordForm";
+import ChangePasswordForm from "@frontend/сomponents/Profile/changePasswordForm";
 
 const Profile = () => {
     return (
