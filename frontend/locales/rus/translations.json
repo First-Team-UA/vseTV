@@ -1,12 +1,64 @@
 {
-    "profileContactHeader":"Мои контакты",
-    "changePasswordHeader":"Изменить пароль для доступа",
-    "tecnEmails":"Технический email",
-    "techTel":"Технический телефон",
-    "finEmails":"Финансовый email",
-    "finTel":"Финансовый телефон",
-    "password":"Пароль",
-    "newPassword":"Новый пароль",
-    "confirm":"Подтвердить",
-    "profileButton":"Сохранить"
+    "login":{
+        "login":"Логин",
+        "password":"Пароль",
+        "button":"Войти",
+        "forget":"Забыли пароль?"
+    },
+    "layout":{
+        "dashboard":"Дашборд",
+        "profile":"Профиль",
+        "tvChannels":"Мои телеканалы",
+        "contacts":"Контакты",
+        "logout":"Выйти"
+    },
+     "header":{
+        "companyName":"Название компании"
+    },
+    "dashboard":{
+        "myChannels":"Мои каналы",
+        "sets":"Наборы",
+        "vsetvChannels":"Каналы VseTV",
+        "myContacts":"Мои контакты",
+        "newArrivals":"Новые поступления"
+    },
+  "profile": {
+    "contactHeader": "Мои контакты",
+    "changePasswordHeader": "Изменить пароль для доступа",
+    "tecnEmails": "Технический email",
+    "techTel": "Технический телефон",
+    "finEmails": "Финансовый email",
+    "finTel": "Финансовый телефон",
+    "password": "Пароль",
+    "newPassword": "Новый пароль",
+    "confirm": "Подтвердить",
+    "button": "Сохранить"
+  },
+    "tvChannels":{
+        "headerChannels":"Мои телеканалы",
+        "set1":"Набор 1",
+        "set2":"Набор 2",
+        "download":"Загрузить список",
+        "name":"Название",
+        "language":"Язык",
+        "ownID":"Собственный ID",
+        "ownName":"Собственное название",
+        "buttonChannels":"Сохранить",
+        "myRequests":"Список моих запросов",
+        "doNotFind":"Не нашли нужный канал?",
+        "doNotFindButton":"Отправить",
+        "history":"История обновлений",
+        "restore":"Восстановить"
+
+
+    },
+    "contacts":{
+        "contactsHeader":"Контакты",
+        "techEmail":"Технический email",
+        "finEmail":"Финансовый email",
+        "techTel":"Технический телефон",
+        "finTel":"Финансовый телефон",
+        "sendHeader":"Отправить сообщение",
+        "button":"Отправить"
+    }
 }
