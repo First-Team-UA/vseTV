@@ -1,0 +1,64 @@
+{
+    "login":{
+        "login":"Login",
+        "password":"Password",
+        "button":"Login",
+        "forget":"Forget password?"
+    },
+    "layout":{
+        "dashboard":"Dashboard",
+        "profile":"Profiles",
+        "tvChannels":"My TV channels",
+        "contacts":"Contacts",
+        "logout":"Logout"
+    },
+    "header":{
+        "companyName":"Company's name"
+    },
+    "dashboard":{
+        "myChannels":"My channels",
+        "sets":"Sets",
+        "vsetvChannels":"VseTV's channels",
+        "myContacts":"My contacts",
+        "newArrivals":"New arrivals"
+    },
+    "profile":{
+    "contactHeader":"My contacts",
+    "changePasswordHeader":"Change password for access",
+    "tecnEmails":"Technical email",
+    "techTel":"Technical phone number",
+    "finEmails":"Financial email",
+    "finTel":"Financial phone number",
+    "password":"Password",
+    "newPassword":"New password",
+    "confirm":"Confirm",
+    "button":"Save"
+    },
+    "tvChannels":{
+        "headerChannels":"My TV channels",
+        "set1":"Set 1",
+        "set2":"Set 2",
+        "download":"Download list",
+        "name":"Name",
+        "language":"Language",
+        "ownID":"Own ID",
+        "ownName":"Own name",
+        "buttonChannels":"Save",
+        "myRequests":"List of my requests",
+        "didNotFind":"Did not find the right channel?",
+        "didNotFindButton":"Send",
+        "history":"History of updates",
+        "restore":"restore"
+
+
+    },
+    "contacts":{
+        "contactsHeader":"Contacts",
+        "techEmail":"Technical email",
+        "finEmail":"Financial email",
+        "techTel":"Technical phone number",
+        "finTel":"Financial phone number",
+        "sendHeader":"Send the message",
+        "button":"Send"
+    }
+}

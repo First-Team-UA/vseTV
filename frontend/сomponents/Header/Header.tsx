@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import LangSwitcher from '../LangSwitcher/LangSwitcher';
 
 const Header = () => {
   return (
@@ -11,7 +12,7 @@ const Header = () => {
         </Link>
       </div>
       <div className="flex space-x-20">
-        <div>Switcher language</div>
+        <LangSwitcher/>
         <div>Switcher theme</div>
 
       </div>
