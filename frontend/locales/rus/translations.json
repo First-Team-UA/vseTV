@@ -1,27 +1,27 @@
 {
-    "login":{
-        "login":"Логин",
-        "password":"Пароль",
-        "button":"Войти",
-        "forget":"Забыли пароль?"
-    },
-    "layout":{
-        "dashboard":"Дашборд",
-        "profile":"Профиль",
-        "tvChannels":"Мои телеканалы",
-        "contacts":"Контакты",
-        "logout":"Выйти"
-    },
-     "header":{
-        "companyName":"Название компании"
-    },
-    "dashboard":{
-        "myChannels":"Мои каналы",
-        "sets":"Наборы",
-        "vsetvChannels":"Каналы VseTV",
-        "myContacts":"Мои контакты",
-        "newArrivals":"Новые поступления"
-    },
+  "login": {
+    "login": "Логин",
+    "password": "Пароль",
+    "button": "Войти",
+    "forget": "Забыли пароль?"
+  },
+  "layout": {
+    "dashboard": "Дашборд",
+    "profile": "Профиль",
+    "tvChannels": "Мои телеканалы",
+    "contacts": "Контакты",
+    "logout": "Выйти"
+  },
+  "header": {
+    "companyName": "Название компании"
+  },
+  "dashboard": {
+    "myChannels": "Мои каналы",
+    "sets": "Наборы",
+    "vsetvChannels": "Каналы VseTV",
+    "myContacts": "Мои контакты",
+    "newArrivals": "Новые поступления"
+  },
   "profile": {
     "contactHeader": "Мои контакты",
     "changePasswordHeader": "Изменить пароль для доступа",
@@ -34,31 +34,29 @@
     "confirm": "Подтвердить",
     "button": "Сохранить"
   },
-    "tvChannels":{
-        "headerChannels":"Мои телеканалы",
-        "set1":"Набор 1",
-        "set2":"Набор 2",
-        "download":"Загрузить список",
-        "name":"Название",
-        "language":"Язык",
-        "ownID":"Собственный ID",
-        "ownName":"Собственное название",
-        "buttonChannels":"Сохранить",
-        "myRequests":"Список моих запросов",
-        "doNotFind":"Не нашли нужный канал?",
-        "doNotFindButton":"Отправить",
-        "history":"История обновлений",
-        "restore":"Восстановить"
-
-
-    },
-    "contacts":{
-        "contactsHeader":"Контакты",
-        "techEmail":"Технический email",
-        "finEmail":"Финансовый email",
-        "techTel":"Технический телефон",
-        "finTel":"Финансовый телефон",
-        "sendHeader":"Отправить сообщение",
-        "button":"Отправить"
-    }
+  "tvChannels": {
+    "headerChannels": "Мои телеканалы",
+    "set1": "Набор 1",
+    "set2": "Набор 2",
+    "download": "Загрузить список",
+    "name": "Название",
+    "language": "Язык",
+    "ownID": "Собственный ID",
+    "ownName": "Собственное название",
+    "buttonChannels": "Сохранить",
+    "myRequests": "Список моих запросов",
+    "doNotFind": "Не нашли нужный канал?",
+    "doNotFindButton": "Отправить",
+    "history": "История обновлений",
+    "restore": "Восстановить"
+  },
+  "contacts": {
+    "contactsHeader": "Контакты",
+    "techEmail": "Технический email",
+    "finEmail": "Финансовый email",
+    "techTel": "Технический телефон",
+    "finTel": "Финансовый телефон",
+    "sendHeader": "Отправить сообщение",
+    "button": "Отправить"
+  }
 }

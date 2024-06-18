@@ -1,27 +1,27 @@
 {
-    "login":{
-        "login":"Логін",
-        "password":"Пароль",
-        "button":"Увійти",
-        "forget":"Забули пароль?"
-    },
-    "layout":{
-        "dashboard":"Дашборд",
-        "profile":"Профіль",
-        "tvChannels":"Мої телеканали",
-        "contacts":"Контакти",
-        "logout":"Вийти"
-    },
-     "header":{
-        "companyName":"Назва компанії"
-    },
-    "dashboard":{
-        "myChannels":"Мої канали",
-        "sets":"Набір",
-        "vsetvChannels":"Канали VseTV",
-        "myContacts":"Мої контакти",
-        "newArrivals":"Нові надходження"
-    },
+  "login": {
+    "login": "Логін",
+    "password": "Пароль",
+    "button": "Увійти",
+    "forget": "Забули пароль?"
+  },
+  "layout": {
+    "dashboard": "Дашборд",
+    "profile": "Профіль",
+    "tvChannels": "Мої телеканали",
+    "contacts": "Контакти",
+    "logout": "Вийти"
+  },
+  "header": {
+    "companyName": "Назва компанії"
+  },
+  "dashboard": {
+    "myChannels": "Мої канали",
+    "sets": "Набір",
+    "vsetvChannels": "Канали VseTV",
+    "myContacts": "Мої контакти",
+    "newArrivals": "Нові надходження"
+  },
   "profile": {
     "contactHeader": "Мої контакти",
     "changePasswordHeader": "Змінити пароль для доступу",
@@ -34,31 +34,29 @@
     "confirm": "Підтвердити",
     "button": "Зберігти"
   },
-    "tvChannels":{
-        "headerChannels":"Мої телеканали",
-        "set1":"Набір 1",
-        "set2":"Набір 2",
-        "download":"Завантажити перелік",
-        "name":"Назва",
-        "language":"Мова",
-        "ownID":"Власний ID",
-        "ownName":"Власна назва",
-        "buttonChannels":"Зберігти",
-        "myRequests":"Перелік моїх запитів",
-        "doNotFind":"Не знайшли потрібний каналу?",
-        "doNotFindButton":"Відправити",
-        "history":"Історія оновлень",
-        "restore":"Відновити"
-
-
-    },
-    "contacts":{
-        "contactsHeader":"Контакти",
-        "techEmail":"Технічний email",
-        "finEmail":"Фінансовий email",
-        "techTel":"Технічний телефон",
-        "finTel":"Фінансовий телефон",
-        "sendHeader":"Відправити повідомлення",
-        "button":"Відправити"
-    }
+  "tvChannels": {
+    "headerChannels": "Мої телеканали",
+    "set1": "Набір 1",
+    "set2": "Набір 2",
+    "download": "Завантажити перелік",
+    "name": "Назва",
+    "language": "Мова",
+    "ownID": "Власний ID",
+    "ownName": "Власна назва",
+    "buttonChannels": "Зберігти",
+    "myRequests": "Перелік моїх запитів",
+    "doNotFind": "Не знайшли потрібний каналу?",
+    "doNotFindButton": "Відправити",
+    "history": "Історія оновлень",
+    "restore": "Відновити"
+  },
+  "contacts": {
+    "contactsHeader": "Контакти",
+    "techEmail": "Технічний email",
+    "finEmail": "Фінансовий email",
+    "techTel": "Технічний телефон",
+    "finTel": "Фінансовий телефон",
+    "sendHeader": "Відправити повідомлення",
+    "button": "Відправити"
+  }
 }

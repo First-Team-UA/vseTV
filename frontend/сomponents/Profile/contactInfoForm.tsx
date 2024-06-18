@@ -42,31 +42,31 @@ const ContactInfoForm:React.FC = () => {
     return (
         <div>
             
-        <h2>{t('profileContactHeader')}</h2>
+        <h2>{t('profile.contactHeader')}</h2>
 
             <form>
                 <ul>
                     <li>
                         <label>
-                            {t('techEmails')}
+                            {t('profile.techEmails')}
                             <input type="text" name='techEmails' onChange={handleChange}/>
                         </label>
                     </li>
                     <li>
                         <label>
-                            {t('techTel')}
+                            {t('profile.techTel')}
                             <input type="tel" name='techTel' onChange={handleChange}/>
                         </label>
                     </li>
                     <li>
                         <label>
-                            {t('finEmails')}
+                            {t('profile.finEmails')}
                             <input type="text" name='finEmails' onChange={handleChange}/>
                         </label>
                     </li>
                     <li>
                         <label>
-                            {t('finTel')}
+                            {t('profile.finTel')}
                             <input type="tel" name='finTel' onChange={handleChange}/>
                         </label>
                     </li>
