@@ -39,24 +39,24 @@ const ChangePasswordForm: React.FC = () => {
   const { t } = useTranslation();
   return (
     <div>
-      <h2>{t('changePasswordHeader')}</h2>
+      <h2>{t('profile.changePasswordHeader')}</h2>
       <form onSubmit={handleSubmit}>
         <ul>
           <li>
             <label>
-                {t('password')}
+                {t('profile.password')}
               <input type="password" name='oldPassword' onChange={handleChange}/>
             </label>
           </li>
           <li>
             <label>
-                {t('newPassword')}
+                {t('profile.newPassword')}
               <input type="password" name='newPassword' onChange={handleChange}/>
             </label>
           </li>
           <li>
             <label>
-                {t('confirm')}
+                {t('profile.confirm')}
               <input type="password" name='confirmPassword' onChange={handleChange}/>
             </label>
           </li>

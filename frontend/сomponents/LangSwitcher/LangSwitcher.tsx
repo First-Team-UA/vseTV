@@ -30,7 +30,7 @@ const LangSwitcher: React.FC = () => {
       
 
     return (
-        <div>
+        <div className='mr-4 flex bg-slate-600'>
             <select name="language"  onChange={handleLanguage}>
                 <option value="ukr">UKR</option>
                 <option value="rus">RUS</option>
