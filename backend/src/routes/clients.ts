@@ -6,12 +6,12 @@ import { changePasswordSchema, updateInfoSchema } from '../schemas/clientsSchema
 
 const router = Router();
 
-router.get("/admin/clients", auth, clientControllers.getClientsInfo);
+router.get("/admin/clients",  clientControllers.getClientsInfo);
 
-router.get('/:id', auth, clientControllers.getClientInfo);
+router.get('/:id',  clientControllers.getClientInfo);
 
-router.patch('/:id', auth, validateBody(updateInfoSchema), clientControllers.changeClientInfo);
+router.patch('/:id',  validateBody(updateInfoSchema), clientControllers.changeClientInfo);
 
-router.patch('/:id/password',auth, validateBody(changePasswordSchema), clientControllers.changePassword)
+router.patch('/:id/password', validateBody(changePasswordSchema), clientControllers.changePassword)
 
 export default router;

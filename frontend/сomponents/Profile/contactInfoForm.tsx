@@ -2,6 +2,11 @@
 import React, {useState} from 'react'
 import { useTranslation } from "react-i18next"
 import SubmitButton from './submitButton'
+import profileAPI from '@frontend/API/profileAPI'
+import { useRouter } from 'next/router'
+
+
+
 
 const ContactInfoForm:React.FC = () => {
     const {t, } = useTranslation()
@@ -9,6 +14,14 @@ const ContactInfoForm:React.FC = () => {
     const [techTel, setTechTel] = useState<string>('');
     const [finEmails, setFinEmails] = useState<string>('');
     const [finTel, setFinTel] = useState<string>('')
+
+    const router = useRouter();
+    const { id } = router.query 
+    
+     if (typeof id !== 'string') {
+    return <p>Loading...</p>;
+  }
+
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         const { name, value} = e.currentTarget
@@ -21,7 +34,7 @@ const ContactInfoForm:React.FC = () => {
                 setTechTel(value)
                 break;
             case 'finEmails':
-                setTechEmails(value)
+                setFinEmails(value)
                 break;
             case 'finTel':
                 setFinTel(value)
@@ -33,8 +46,16 @@ const ContactInfoForm:React.FC = () => {
     }
     const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+       
 
-        
+        const formData = {
+            contact_email_tech: techEmails,
+            contact_tel_tech: techTel,
+            contact_email_fin: finEmails,
+            contact_tel_fin: finTel
+        }
+
+        profileAPI.changeClientInfo(id, formData)
 
         
     }
@@ -44,7 +65,7 @@ const ContactInfoForm:React.FC = () => {
             
         <h2>{t('profile.contactHeader')}</h2>
 
-            <form>
+            <form onSubmit={handleSubmit}>
                 <ul>
                     <li>
                         <label>
