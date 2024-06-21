@@ -3,6 +3,7 @@ import Layout from "../../сomponents/Layout/layout";
 import ChangePasswordForm from "@frontend/сomponents/Profile/changePasswordForm";
 
 const Profile = () => {
+
     return (
 <Layout>
             <div>
