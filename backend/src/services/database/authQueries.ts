@@ -1,14 +1,11 @@
 import pool from './index';
-import fs from 'fs';
 import { RowDataPacket } from 'mysql2';
-import mysql from 'mysql2/promise';
 import HttpError from '../../helpers/HttpError';
 
 export interface ClientAuth extends RowDataPacket {
   id: number;
-  login: string;
-  password: string;
   token: string;
+  refreshtoken?:string
 }
 
 // Прийняти логін і пароль, повернути аутентифікаційні данні
@@ -18,7 +15,7 @@ export async function getAuth(
 ): Promise<ClientAuth | null> {
   try {
     const [rows]: [ClientAuth[], any] = await pool.query(
-      'SELECT * FROM clients_auth WHERE login = ? AND password = ?',
+      'SELECT id, token, refreshtoken FROM clients_auth WHERE login = ? AND password = ?',
       [login, password],
     );
 

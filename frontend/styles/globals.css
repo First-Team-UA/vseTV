@@ -20,7 +20,7 @@
 
 /* Застосування стилів до body */
 body {
-  @apply bg-gray-100 text-white;
+  @apply text-white bg-gray-100;
   font-family: var(--font-roboto);
 }
 
@@ -176,21 +176,21 @@ ul, ol {
   padding: 0 1rem;
 }
 
-.flex {
+/* .flex {
   @apply flex;
-}
+} */
 
 .flex-center {
-  @apply flex justify-center items-center;
+  @apply flex items-center justify-center;
 }
 
 .flex-column {
   @apply flex flex-col;
 }
 
-.text-center {
+/* .text-center {
   @apply text-center;
-}
+} */
 
 .mt-1 { @apply mt-4; }
 .mt-2 { @apply mt-8; }
