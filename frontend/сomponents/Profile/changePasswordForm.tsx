@@ -1,3 +1,5 @@
+'use client'
+
 import profileAPI from '@frontend/API/profileAPI';
 import SubmitButton from './submitButton';
 import { useRouter } from 'next/router';

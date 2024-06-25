@@ -70,25 +70,25 @@ const ContactInfoForm:React.FC = () => {
                     <li>
                         <label>
                             {t('profile.techEmails')}
-                            <input type="text" name='techEmails' onChange={handleChange}/>
+                            <input type="text" value={techEmails} name='techEmails' onChange={handleChange}/>
                         </label>
                     </li>
                     <li>
                         <label>
                             {t('profile.techTel')}
-                            <input type="tel" name='techTel' onChange={handleChange}/>
+                            <input type="tel" value={techTel} name='techTel' onChange={handleChange}/>
                         </label>
                     </li>
                     <li>
                         <label>
                             {t('profile.finEmails')}
-                            <input type="text" name='finEmails' onChange={handleChange}/>
+                            <input type="text" value={finEmails} name='finEmails' onChange={handleChange}/>
                         </label>
                     </li>
                     <li>
                         <label>
                             {t('profile.finTel')}
-                            <input type="tel" name='finTel' onChange={handleChange}/>
+                            <input type="tel" value={finTel} name='finTel' onChange={handleChange}/>
                         </label>
                     </li>
                 </ul>
