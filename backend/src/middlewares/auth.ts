@@ -1,8 +1,9 @@
 import jwt from "jsonwebtoken";
 import HttpError from "../helpers/HttpError";
 import { Request, Response, NextFunction } from "express";
-import { getClients } from "../services/database/clientsQueries";
+import { Client, getClientById } from "../services/database/clientsQueries";
 import { JwtPayload } from "../helpers/JWTHandling";
+
 
 const auth = async (req: Request, res: Response, next: NextFunction) => {
 	const authHeader = req.headers.authorization;
@@ -18,26 +19,24 @@ const auth = async (req: Request, res: Response, next: NextFunction) => {
 
 	// чи є в заголовку беарер?
     if (bearer !== "Bearer") {
-        const err = new HttpError(401, "Not authorized")
+        const err = new HttpError(401, "Not authorized because of bearer")
 		next(err);
 	}
 	const secretKey = process.env.JWT_SECRET || '';
-
 	try {
 		// чи валідний токен і є юзер в базі?
 		const { id } = jwt.verify(token, secretKey) as JwtPayload;
-		const data = await getClients();
-		const user = data.find(user => user.token === id);
+		const data = await getClientById(Number(id)) as Client;
+		const user = data.id === Number(id);
         if (!user) {
-            const err = new HttpError(401, "Not authorized")
+            const err = new HttpError(401, "Not authorized because of data")
 			next(err);
 		}
-
 		req.user = { id };
 
 		next();
     } catch {
-        const err = new HttpError(401, "Not authorized")
+        const err = new HttpError(401, "Not authorized different err")
 		next(err);
 	}
 };

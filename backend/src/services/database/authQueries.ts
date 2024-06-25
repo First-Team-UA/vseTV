@@ -2,8 +2,9 @@ import pool from './index';
 import fs from 'fs';
 import { RowDataPacket } from 'mysql2';
 import mysql from 'mysql2/promise';
+import HttpError from '../../helpers/HttpError';
 
-interface ClientAuth extends RowDataPacket {
+export interface ClientAuth extends RowDataPacket {
   id: number;
   login: string;
   password: string;
@@ -29,6 +30,24 @@ export async function getAuth(
   } catch (error) {
     console.error('Error executing query', error);
     return null;
+  }
+}
+
+export const setToken = async (token: string, id:number): Promise<void> => {
+  try {
+    await pool.query('UPDATE clients_auth SET token=? WHERE id=?',[token, id])
+  } catch (error) {
+    const err = new HttpError(404, "Not Found")
+    throw err
+  }
+}
+
+export const logout = async (id:number):Promise<void> => {
+  try {
+    await pool.query("UPDATE clients_auth SET token=? WHERE id=?",[null, id])
+  } catch (error) {
+    const err = new HttpError(404, "Not Found")
+    throw err
   }
 }
 
