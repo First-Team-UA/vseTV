@@ -58,5 +58,9 @@
     "finTel": "Financial phone number",
     "sendHeader": "Send the message",
     "button": "Send"
+  },
+  "errors":{
+    "loginToast":"Sorry, the login or password you entered is incorrect."
   }
+
 }

@@ -18,13 +18,18 @@ const logIn = async (req: Request, res: Response, next: NextFunction) => {
 
   const testResult = (await getAuth(login, hashPass)) as ClientAuth;
 
-  const newToken = await JWTHandling.signToken(testResult.id.toString());
+  const newToken = JWTHandling.signToken(testResult.id.toString());
 
   await setToken(newToken, testResult.id);
 
-  const finalResult = (await getAuth(login, hashPass)) as ClientAuth;
-
-  res.send(finalResult);
+  try {
+    const finalResult = (await getAuth(login, hashPass)) as ClientAuth;
+    res.send({ finalResult, status: 200 });
+  } catch (error) {
+    const err = new HttpError(404, 'Not Found');
+    res.send({ error: err.message, status: 404 });
+    throw err;
+  }
 };
 
 export const logOut = async (
