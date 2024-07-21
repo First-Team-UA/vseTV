@@ -1,10 +1,10 @@
-'use client'
-import React from "react"
+'use client';
+
+import { Btn } from './Login.styled';
+import React from 'react';
 
 const SubmitButton = () => {
-    return (
-        <button type="submit">Login</button>
-    )
-}
+  return <Btn type="submit">Login</Btn>;
+};
 
-export default SubmitButton
+export default SubmitButton;

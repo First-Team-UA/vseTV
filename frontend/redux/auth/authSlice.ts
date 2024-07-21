@@ -1,11 +1,7 @@
 import { IResult, login, logout } from './authOperations';
 import { PayloadAction, createSlice, SerializedError } from '@reduxjs/toolkit';
 
-const defaultUser = {
-  id: ' ',
-};
-
-interface IInitital {
+export interface IInitital {
   id: string;
   token: string | null;
   error: null | string | SerializedError;
@@ -48,20 +44,7 @@ const authSlice = createSlice({
       })
       .addCase(
         login.rejected,
-        (
-          state,
-          action: PayloadAction<
-            SerializedError | undefined,
-            string,
-            {
-              arg: void;
-              requestId: string;
-              requestStatus: 'rejected';
-              aborted: boolean;
-              condition: boolean;
-            } & ({ rejectedWithValue: true } | { rejectedWithValue: false })
-          >,
-        ) => {
+        (state, action: PayloadAction<SerializedError | undefined>) => {
           state.isAuthenticated = false;
           if (action.payload) {
             state.error = action.payload;
