@@ -1,7 +1,16 @@
-'use client'
+'use client';
 
-import profileAPI from '@frontend/API/profileAPI';
+import {
+  InfoForm,
+  InfoHeader,
+  InfoInput,
+  InfoItem,
+  InfoLabel,
+  InfoList,
+  PassContainer,
+} from './profile.styled';
 import SubmitButton from './submitButton';
+import profileAPI from '@frontend/API/profileAPI';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -47,53 +56,51 @@ const ChangePasswordForm: React.FC = () => {
 
     const passObj = {
       password,
-      newPassword
-    }
+      newPassword,
+    };
 
-    profileAPI.changePassword(id, passObj)
-
+    profileAPI.changePassword(id, passObj);
   };
 
-  
   return (
-    <div>
-      <h2>{t('profile.changePasswordHeader')}</h2>
-      <form onSubmit={handleSubmit}>
-        <ul>
-          <li>
-            <label>
+    <PassContainer>
+      <InfoHeader>{t('profile.changePasswordHeader')}</InfoHeader>
+      <InfoForm onSubmit={handleSubmit}>
+        <InfoList>
+          <InfoItem>
+            <InfoLabel>
               {t('profile.password')}
-              <input
+              <InfoInput
                 type="password"
                 name="oldPassword"
                 onChange={handleChange}
               />
-            </label>
-          </li>
-          <li>
-            <label>
+            </InfoLabel>
+          </InfoItem>
+          <InfoItem>
+            <InfoLabel>
               {t('profile.newPassword')}
-              <input
+              <InfoInput
                 type="password"
                 name="newPassword"
                 onChange={handleChange}
               />
-            </label>
-          </li>
-          <li>
-            <label>
+            </InfoLabel>
+          </InfoItem>
+          <InfoItem>
+            <InfoLabel>
               {t('profile.confirm')}
-              <input
+              <InfoInput
                 type="password"
                 name="confirmPassword"
                 onChange={handleChange}
               />
-            </label>
-          </li>
-        </ul>
+            </InfoLabel>
+          </InfoItem>
+        </InfoList>
         <SubmitButton />
-      </form>
-    </div>
+      </InfoForm>
+    </PassContainer>
   );
 };
 

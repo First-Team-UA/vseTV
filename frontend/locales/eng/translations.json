@@ -25,7 +25,7 @@
   "profile": {
     "contactHeader": "My contacts",
     "changePasswordHeader": "Change password for access",
-    "tecnEmails": "Technical email",
+    "techEmails": "Technical email",
     "techTel": "Technical phone number",
     "finEmails": "Financial email",
     "finTel": "Financial phone number",

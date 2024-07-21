@@ -1,18 +1,17 @@
-import ContactInfoForm from "@frontend/сomponents/Profile/contactInfoForm";
-import Layout from "../../сomponents/Layout/layout";
-import ChangePasswordForm from "@frontend/сomponents/Profile/changePasswordForm";
+import Layout from '../../сomponents/Layout/layout';
+import { ProfileContainer } from './profile.styled';
+import ChangePasswordForm from '@frontend/сomponents/Profile/changePasswordForm';
+import ContactInfoForm from '@frontend/сomponents/Profile/contactInfoForm';
 
 const Profile = () => {
-
-    return (
-<Layout>
-            <div>
-                <h1>Profile</h1>
-                <ContactInfoForm />
-                <ChangePasswordForm/>
-            </div>
-</Layout>
-    );
+  return (
+    <Layout>
+      <ProfileContainer>
+        <ContactInfoForm />
+        <ChangePasswordForm />
+      </ProfileContainer>
+    </Layout>
+  );
 };
 
 export default Profile;

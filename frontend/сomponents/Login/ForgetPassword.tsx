@@ -1,9 +1,10 @@
 'use client';
 
+import { Forget } from './Login.styled';
 import React from 'react';
 
 const ForgetPassword = () => {
-  return <p>Forget your password?</p>;
+  return <Forget>Forget your password?</Forget>;
 };
 
 export default ForgetPassword;

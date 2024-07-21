@@ -1,3 +1,4 @@
+import { IInitital } from './authSlice';
 import { createAsyncThunk, SerializedError } from '@reduxjs/toolkit';
 import axios, { AxiosResponse } from 'axios';
 import { useTranslation } from 'react-i18next';
@@ -11,6 +12,13 @@ export interface IResult {
   refreshtoken?: string;
   error?: string | null;
 }
+export interface IRequestPayload {
+  logIn: string;
+  password: string;
+}
+export interface IRequestLogoutPayload {
+  id: number;
+}
 
 const token = {
   set(token: string) {
@@ -23,10 +31,11 @@ const token = {
 
 export const login = createAsyncThunk<
   IResult,
-  void,
+  IRequestPayload,
   { rejectValue: SerializedError }
 >('login', async (credentials, { rejectWithValue }) => {
   const { t } = useTranslation();
+  const { logIn, password } = credentials;
   try {
     const res: AxiosResponse<IResult> = await axios.post('/auth', credentials);
     if (!res.status) {
@@ -45,16 +54,18 @@ export const login = createAsyncThunk<
   }
 });
 
-export const logout = createAsyncThunk(
-  'logout',
-  async (credentials, { rejectWithValue }) => {
-    try {
-      await axios.post(`${credentials}/logout`);
-      token.unset();
-    } catch (error) {
-      if (axios.isAxiosError(error)) {
-        return rejectWithValue(error as SerializedError);
-      }
+export const logout = createAsyncThunk<
+  void,
+  IRequestLogoutPayload,
+  { rejectValue: SerializedError }
+>('logout', async (credentials, { rejectWithValue }) => {
+  const { id } = credentials;
+  try {
+    await axios.post(`${id}/logout`);
+    token.unset();
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      return rejectWithValue(error as SerializedError);
     }
-  },
-);
+  }
+});
