@@ -1,5 +1,5 @@
+
 import { createGlobalStyle } from 'styled-components';
-import variables from './variables.css';
 
 const GlobalStyles = createGlobalStyle`
   :root {
@@ -33,6 +33,7 @@ const GlobalStyles = createGlobalStyle`
     height: 100%;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
   }
 
   h1, h2, h3, h4, h5, h6 {
