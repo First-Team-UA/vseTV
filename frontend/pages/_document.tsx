@@ -13,7 +13,6 @@ class MyDocument extends Document {
           <meta name="description" content="TV channels database" />
 
         
-          <link rel="stylesheet" href="/frontend/styles/globals.css" />
 
       
           <link rel="preconnect" href="https://fonts.googleapis.com" />
