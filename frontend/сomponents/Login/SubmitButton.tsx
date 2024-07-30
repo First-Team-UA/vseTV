@@ -3,7 +3,7 @@
 import { Btn } from './Login.styled';
 import React from 'react';
 
-const SubmitButton = () => {
+const SubmitButton: React.FC = () => {
   return <Btn type="submit">Login</Btn>;
 };
 
