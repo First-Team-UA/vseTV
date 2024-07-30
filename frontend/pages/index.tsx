@@ -1,15 +1,8 @@
-import Layout from "../сomponents/Layout/layout";
-import Dashboard from "./dashboard/index";
-
+import Layout from '../сomponents/Layout/layout';
+import LoginPage from './login/page';
 
 const IndexPage = () => {
- 
-  return (
-  <Layout>
-    <Dashboard/>
-  </Layout>
-
-  );
+  return <LoginPage />;
 };
 
 export default IndexPage;

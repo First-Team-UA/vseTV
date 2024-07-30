@@ -1,12 +1,21 @@
 'use client';
 
-import { BgContainer, LoginPageContainer } from './loginPage.styled';
+import {
+  BgContainer,
+  FormContainer,
+  LoginPageContainer,
+} from './loginPage.styled';
 import LoginForm from '@frontend/сomponents/Login/LoginForm';
+import Logo from '@frontend/сomponents/Logo/Logo';
+import React from 'react';
 
-const LoginPage = () => {
+const LoginPage: React.FC = () => {
   return (
     <LoginPageContainer>
-      <LoginForm />
+      <FormContainer>
+        <Logo />
+        <LoginForm />
+      </FormContainer>
       <BgContainer></BgContainer>
     </LoginPageContainer>
   );
