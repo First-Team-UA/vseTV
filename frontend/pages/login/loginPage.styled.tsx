@@ -7,7 +7,7 @@ export const LoginPageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 100vh;
 `;
 
 export const FormContainer = styled.div`
