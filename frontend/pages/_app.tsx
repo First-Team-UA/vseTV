@@ -1,5 +1,4 @@
 import type { AppProps } from 'next/app';
-import '../styles/globals.css';
 import GlobalStyles from '../styles/GlobalStyles';
 import '../i18n';
 import SpriteLoader from '../сomponents/SpriteLoader/SpriteLoader';

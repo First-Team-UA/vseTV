@@ -1,4 +1,4 @@
-import { LogoText, Accent, LogoContainer } from './Logo.styled';
+import { LogoText, Accent, LogoContainer } from '../../styles/logo/Logo.styled';
 
 const Logo: React.FC = () => {
   return (

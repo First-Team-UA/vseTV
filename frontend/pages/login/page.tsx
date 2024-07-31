@@ -4,7 +4,7 @@ import {
   BgContainer,
   FormContainer,
   LoginPageContainer,
-} from './loginPage.styled';
+} from '../../styles/login/loginPage.styled';
 import LoginForm from '@frontend/сomponents/Login/LoginForm';
 import Logo from '@frontend/сomponents/Logo/Logo';
 import React from 'react';

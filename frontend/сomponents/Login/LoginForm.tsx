@@ -1,7 +1,7 @@
 'use client';
 
 import ForgetPassword from './ForgetPassword';
-import { Form, FormContainer, Input, Item, Label, List } from './Login.styled';
+import { Form, FormContainer, Input, Item, Label, List } from '../../styles/login/Login.styled';
 import SubmitButton from './SubmitButton';
 import { IRequestPayload, login } from '@frontend/redux/auth/authOperations';
 import { IInitital } from '@frontend/redux/auth/authSlice';
