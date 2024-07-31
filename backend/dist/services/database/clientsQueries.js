@@ -47,7 +47,7 @@ const getClientById = (id) => __awaiter(void 0, void 0, void 0, function* () {
 exports.getClientById = getClientById;
 const updateClientInfo = (id, update) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        yield index_1.default.execute(`UPDATE clients SET name=?, contact_email_tech=?, contact_email_fin=?, contact_tel_tech=?, contact_tel_fin=?  WHERE id=?`, [update.name, update.contact_email_tech, update.contact_email_fin, update.contact_tel_tech, update.contact_tel_fin, id]);
+        yield index_1.default.execute(`UPDATE clients SET contact_email_tech=?, contact_email_fin=?, contact_tel_tech=?, contact_tel_fin=?  WHERE id=?`, [update.contact_email_tech, update.contact_email_fin, update.contact_tel_tech, update.contact_tel_fin, id]);
     }
     catch (error) {
         const err = new HttpError_1.default(404, "Not Found");

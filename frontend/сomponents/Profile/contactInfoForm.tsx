@@ -8,7 +8,7 @@ import {
   InfoItem,
   InfoLabel,
   InfoList,
-} from './profile.styled';
+} from '../../styles/profile/profile.styled';
 import SubmitButton from './submitButton';
 import profileAPI from '@frontend/API/profileAPI';
 import { useRouter } from 'next/router';

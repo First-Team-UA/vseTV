@@ -26,24 +26,24 @@ const auth = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () 
     const [bearer, token] = authHeader.split(" ", 2);
     // чи є в заголовку беарер?
     if (bearer !== "Bearer") {
-        const err = new HttpError_1.default(401, "Not authorized");
+        const err = new HttpError_1.default(401, "Not authorized because of bearer");
         next(err);
     }
     const secretKey = process.env.JWT_SECRET || '';
     try {
         // чи валідний токен і є юзер в базі?
         const { id } = jsonwebtoken_1.default.verify(token, secretKey);
-        const data = yield (0, clientsQueries_1.getClients)();
-        const user = data.find(user => user.token === id);
+        const data = yield (0, clientsQueries_1.getClientById)(Number(id));
+        const user = data.id === Number(id);
         if (!user) {
-            const err = new HttpError_1.default(401, "Not authorized");
+            const err = new HttpError_1.default(401, "Not authorized because of data");
             next(err);
         }
         req.user = { id };
         next();
     }
     catch (_a) {
-        const err = new HttpError_1.default(401, "Not authorized");
+        const err = new HttpError_1.default(401, "Not authorized different err");
         next(err);
     }
 });

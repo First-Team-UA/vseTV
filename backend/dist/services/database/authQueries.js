@@ -1,5 +1,4 @@
 "use strict";
-//import pool from './index';
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -13,34 +12,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getAuthById = void 0;
-const fs_1 = __importDefault(require("fs"));
-const promise_1 = __importDefault(require("mysql2/promise"));
-const pool = promise_1.default.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: 'test_auth',
-    port: Number(process.env.DB_PORT),
-    ssl: {
-        ca: fs_1.default.readFileSync('../ca-certificate.crt'),
-        rejectUnauthorized: true,
-    },
-});
-// Прийняти ID, повернути аутентифікаційні данні
-function getAuthById(id) {
+exports.logout = exports.setToken = exports.getAuth = void 0;
+const index_1 = __importDefault(require("./index"));
+const HttpError_1 = __importDefault(require("../../helpers/HttpError"));
+// Прийняти логін і пароль, повернути аутентифікаційні данні
+function getAuth(login, password) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            // const [rows] = await pool.query<ClientAuth[]>(
-            //   'SELECT * FROM clients_auth WHERE id = ?',
-            //   [id],
-            // );
-            const [rows] = yield pool.query('SELECT * FROM auth WHERE id = ?', [id]);
-            if (rows.length > 0) {
-                return rows[0]; // Return the first (and likely only) row
+            const [rows] = yield index_1.default.query('SELECT id, token, refreshtoken FROM clients_auth WHERE login = ? AND password = ?', [login, password]);
+            if (Array.isArray(rows) && rows.length > 0) {
+                return rows[0];
             }
             else {
-                return null; // No rows found
+                return null;
             }
         }
         catch (error) {
@@ -49,4 +33,28 @@ function getAuthById(id) {
         }
     });
 }
-exports.getAuthById = getAuthById;
+exports.getAuth = getAuth;
+const setToken = (token, id) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        yield index_1.default.query('UPDATE clients_auth SET token=? WHERE id=?', [token, id]);
+    }
+    catch (error) {
+        const err = new HttpError_1.default(404, "Not Found");
+        throw err;
+    }
+});
+exports.setToken = setToken;
+const logout = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        yield index_1.default.query("UPDATE clients_auth SET token=? WHERE id=?", [null, id]);
+    }
+    catch (error) {
+        const err = new HttpError_1.default(404, "Not Found");
+        throw err;
+    }
+});
+exports.logout = logout;
+// const [rows] = await pool.query<ClientAuth[]>(
+//   'SELECT * FROM clients_auth WHERE id = ?',
+//   [id],
+// );
