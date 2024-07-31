@@ -7,13 +7,14 @@ export const LoginPageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 `;
 
 export const FormContainer = styled.div`
   padding-left: 80px;
   padding-right: 80px;
   background-color: #eef3ff;
-  height: 100vh;
+  height: 100%;
 `;
 export const BgContainer = styled.div`
   background-size: cover;

@@ -14,6 +14,7 @@ import { Action } from 'redux';
 const LoginForm: React.FC = () => {
   const dispatch =
     useDispatch<ThunkDispatch<IInitital, IRequestPayload, Action>>();
+  const router = useRouter();
   const [logIn, setLogIn] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
@@ -32,13 +33,13 @@ const LoginForm: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = {
-      logIn,
-      password,
-    };
-    dispatch(login(data));
+
+    try {
+      await dispatch(login({ logIn, password })).unwrap();
+      router.push('/profile');
+    } catch (error) {}
   };
 
   return (
@@ -48,13 +49,13 @@ const LoginForm: React.FC = () => {
           <Item>
             <Label>
               Login
-              <Input type="text" onChange={handleChange} />
+              <Input type="text" name="login" onChange={handleChange} />
             </Label>
           </Item>
           <Item>
             <Label>
               Password
-              <Input type="password" onChange={handleChange} />
+              <Input type="password" name="password" onChange={handleChange} />
             </Label>
           </Item>
         </List>
