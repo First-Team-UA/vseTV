@@ -1,10 +1,9 @@
 import { IInitital } from './authSlice';
 import { createAsyncThunk, SerializedError } from '@reduxjs/toolkit';
 import axios, { AxiosResponse } from 'axios';
-import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 
-axios.defaults.baseURL = 'https://clients-backoffice-7ingn.ondigitalocean.app';
+axios.defaults.baseURL = `${process.env.NEXT_PUBLIC_API_BASE_URL}`;
 
 console.log(axios.defaults.baseURL);
 
