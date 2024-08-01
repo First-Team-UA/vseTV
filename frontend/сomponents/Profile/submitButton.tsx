@@ -1,4 +1,4 @@
-import { Btn } from './profile.styled';
+import { Btn } from '../../styles/profile/profile.styled';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 

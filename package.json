@@ -15,7 +15,7 @@
     "build": "npm run build:frontend && npm run build:backend",
     "start:frontend": "npm --prefix frontend run start",
     "start:backend": "npm --prefix backend run start",
-    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+    "start": "node index.js",
     "lint:frontend": "npm --prefix frontend run lint",
     "lint:backend": "npm --prefix backend run lint",
     "lint": "npm run lint:frontend && npm run lint:backend",

@@ -1,6 +1,6 @@
 'use client';
 
-import { Forget } from './Login.styled';
+import { Forget } from '../../styles/login/Login.styled';
 import React from 'react';
 
 const ForgetPassword: React.FC = () => {
