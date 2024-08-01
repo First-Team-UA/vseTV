@@ -54,7 +54,7 @@ export const Input = styled.input`
   @media (min-width: 1024px) {
     font-size: 18px;
     line-height: 1.5;
-    padding-left: 14px;
+    padding: 7px 0px 7px 14px;
     margin-top: 4px;
     width: 95%;
   }

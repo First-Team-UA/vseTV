@@ -1,8 +1,12 @@
 import Layout from '../сomponents/Layout/layout';
-import LoginPage from './login/page';
+import Dashboard from './dashboard';
 
 const IndexPage = () => {
-  return <LoginPage />;
+  return (
+    <Layout>
+      <Dashboard />
+    </Layout>
+  );
 };
 
 export default IndexPage;

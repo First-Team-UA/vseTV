@@ -1,10 +1,11 @@
 import { IInitital } from './authSlice';
 import { createAsyncThunk, SerializedError } from '@reduxjs/toolkit';
 import axios, { AxiosResponse } from 'axios';
-import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 
-axios.defaults.baseURL = `${process.env.API_BASE_URL}`;
+axios.defaults.baseURL = `${process.env.NEXT_PUBLIC_API_BASE_URL}`;
+
+console.log(axios.defaults.baseURL);
 
 export interface IResult {
   id: string;
@@ -34,21 +35,20 @@ export const login = createAsyncThunk<
   IRequestPayload,
   { rejectValue: SerializedError }
 >('login', async (credentials, { rejectWithValue }) => {
-  const { t } = useTranslation();
-  const { logIn, password } = credentials;
+  console.log(credentials);
   try {
     const res: AxiosResponse<IResult> = await axios.post('/auth', credentials);
     if (!res.status) {
-      throw new Error(`${t('errors.loginToast')}`);
+      throw new Error();
     }
     token.set(res.data.token);
     return res.data as IResult;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      toast.error(`${t('errors.loginToast')}`);
+      toast.error('Something went wrong');
       return rejectWithValue(error as SerializedError);
     } else {
-      toast.error(`${t('errors.loginToast')}`);
+      toast.error('Something went wrong');
       throw new Error('');
     }
   }
