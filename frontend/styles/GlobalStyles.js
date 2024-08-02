@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   :root {
+    --color-active: #CECDFF; 
     --color-primary: #6B09E8;        /* Фіолетовий */
     --color-secondary: #7E5EFF;      /* Ліловий */
     --color-tertiary: #110178;       /* Темно-фіолетовий */
@@ -21,10 +22,12 @@ const GlobalStyles = createGlobalStyle`
     --font-size-16: 16px;
     --font-size-18: 18px;
     --font-size-24: 24px;
+    
+    --gradient-background: linear-gradient(180deg, #E1F1FF 0%, #C4CDFE 100%);
   }
 
   body {
-    background-color: var(--color-bg-light);
+    background: var(--gradient-background);
     color: var(--color-text-white);
     font-family: var(--font-roboto);
     margin: 0;
