@@ -1,22 +1,21 @@
-
 import React from 'react';
 import Link from 'next/link';
 import LangSwitcher from '../LangSwitcher/LangSwitcher';
+import { HeaderContainer, LogoContainer, SwitcherContainer } from './Header.style';
 
 const Header = () => {
   return (
-    <div className="flex items-center justify-between   w-full">
-      <div>
+    <HeaderContainer>
+      <LogoContainer>
         <Link href="/">
-          <span className="cursor-pointer">Logo</span>
+          <span>VseTV {/* ЗАГЛУШКА */}</span>
         </Link>
-      </div>
-      <div className="flex space-x-20">
-        <LangSwitcher/>
+      </LogoContainer>
+      <SwitcherContainer>
+        <LangSwitcher />
         <div>Switcher theme</div>
-
-      </div>
-    </div>
+      </SwitcherContainer>
+    </HeaderContainer>
   );
 };
 

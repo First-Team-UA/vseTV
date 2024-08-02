@@ -1,6 +1,13 @@
 import React, { ReactNode } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import Header from '../Header/Header';
+import {
+  LayoutContainer,
+  SidebarContainer,
+  MainContainer,
+  HeaderContainer,
+  ContentContainer,
+} from './layout.style';
 
 type LayoutProps = {
   children: ReactNode;
@@ -8,26 +15,21 @@ type LayoutProps = {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="flex h-screen">
-
-      <aside className="w-[252px] h-screen">
+    <LayoutContainer>
+      <SidebarContainer>
         <Sidebar />
-      </aside>
+      </SidebarContainer>
 
-
-      <div className="flex-1 flex flex-col">
-
-        <header className="h-16 ">
+      <MainContainer>
+        <HeaderContainer>
           <Header />
-        </header>
+        </HeaderContainer>
 
-
-        <main className="flex-1  overflow-y-auto ">
-
+        <ContentContainer>
           {children}
-        </main>
-      </div>
-    </div>
+        </ContentContainer>
+      </MainContainer>
+    </LayoutContainer>
   );
 };
 
