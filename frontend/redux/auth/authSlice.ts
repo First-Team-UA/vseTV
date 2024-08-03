@@ -1,5 +1,6 @@
 import { IResult, login, logout } from './authOperations';
 import { PayloadAction, createSlice, SerializedError } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 
 export interface IInitital {
   id: string;

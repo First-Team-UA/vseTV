@@ -10,8 +10,6 @@ import {
   InfoList,
 } from '../../styles/profile/profile.styled';
 import SubmitButton from './submitButton';
-import profileAPI from '@frontend/API/profileAPI';
-import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -21,13 +19,6 @@ const ContactInfoForm: React.FC = () => {
   const [techTel, setTechTel] = useState<string>('');
   const [finEmails, setFinEmails] = useState<string>('');
   const [finTel, setFinTel] = useState<string>('');
-
-  const router = useRouter();
-  const { id } = router.query;
-
-  if (typeof id !== 'string') {
-    return <p>Loading...</p>;
-  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.currentTarget;
@@ -59,8 +50,6 @@ const ContactInfoForm: React.FC = () => {
       contact_email_fin: finEmails,
       contact_tel_fin: finTel,
     };
-
-    profileAPI.changeClientInfo(id, formData);
   };
 
   return (

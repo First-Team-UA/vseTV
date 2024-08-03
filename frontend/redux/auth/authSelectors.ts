@@ -1,5 +1,7 @@
 export interface IState {
-  clients: {};
+  clients: {
+    info: {};
+  };
   auth: {
     id: string;
     token: string | null;
