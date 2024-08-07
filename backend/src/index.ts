@@ -7,20 +7,20 @@ import setsRouter from './routes/sets';
 import { testConnection } from './services/database/index';
 import dotenv from 'dotenv';
 import express, { NextFunction, Request, Response } from 'express';
-import swaggerUi from "swagger-ui-express";
+import swaggerUi from 'swagger-ui-express';
 
-const swaggerDocument = require("../swagger.json");
+const swaggerDocument = require('../swagger.json');
 const app = express();
 const port = process.env.PORT || 4000;
 
 app.use(express.json());
 
 app.use('/', indexRouter);
-app.use('/auth', authRouter);
-app.use('/clients', clientsRouter);
-app.use('/channels', channelsRouter);
+app.use('/api/auth', authRouter);
+app.use('/api/clients', clientsRouter);
+app.use('/api/channels', channelsRouter);
 app.use('/api/sets', setsRouter);
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(
   (err: HttpError, req: Request, res: Response, next: NextFunction): void => {

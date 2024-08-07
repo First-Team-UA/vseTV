@@ -34,19 +34,15 @@ const getClientInfo = async (req: Request, res: Response): Promise<void> => {
       contact_tel_tech,
       contact_tel_fin,
       active,
-      token,
     } = client as Client;
-    res
-      .status(200)
-      .json({
-        name,
-        contact_email_tech,
-        contact_email_fin,
-        contact_tel_tech,
-        contact_tel_fin,
-        active,
-        token,
-      });
+    res.status(200).json({
+      name,
+      contact_email_tech,
+      contact_email_fin,
+      contact_tel_tech,
+      contact_tel_fin,
+      active,
+    });
   } catch (error) {
     const err = new HttpError(404, 'Client not found');
     throw err;

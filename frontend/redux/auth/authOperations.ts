@@ -1,11 +1,8 @@
-import { IInitital } from './authSlice';
 import { createAsyncThunk, SerializedError } from '@reduxjs/toolkit';
 import axios, { AxiosResponse } from 'axios';
 import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = `${process.env.NEXT_PUBLIC_API_BASE_URL}`;
-
-console.log(axios.defaults.baseURL);
 
 export interface IResult {
   id: string;
@@ -37,7 +34,10 @@ export const login = createAsyncThunk<
 >('login', async (credentials, { rejectWithValue }) => {
   console.log(credentials);
   try {
-    const res: AxiosResponse<IResult> = await axios.post('/auth', credentials);
+    const res: AxiosResponse<IResult> = await axios.post(
+      '/api/auth',
+      credentials,
+    );
     if (!res.status) {
       throw new Error();
     }
@@ -61,7 +61,7 @@ export const logout = createAsyncThunk<
 >('logout', async (credentials, { rejectWithValue }) => {
   const { id } = credentials;
   try {
-    await axios.post(`${id}/logout`);
+    await axios.post(`/api/auth/${id}/logout`);
     token.unset();
   } catch (error) {
     if (axios.isAxiosError(error)) {

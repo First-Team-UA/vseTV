@@ -26,6 +26,14 @@ const authSlice = createSlice({
     setID(state, action) {
       state.id = action.payload;
     },
+    setIsLoadingServer(state, action: PayloadAction<boolean>) {
+      state.isLoadingServer = action.payload;
+    },
+    setError(state, action: PayloadAction<SerializedError>) {
+      if (action.payload) {
+        state.error = action.payload;
+      }
+    },
   },
   extraReducers: builder => {
     builder
@@ -66,6 +74,6 @@ const authSlice = createSlice({
   },
 });
 
-export const { setID } = authSlice.actions;
+export const { setID, setIsLoadingServer, setError } = authSlice.actions;
 export default authSlice.reducer;
 export const authReducer = authSlice.reducer;
