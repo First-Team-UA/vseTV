@@ -5,6 +5,7 @@ import clientsRouter from './routes/clients';
 import indexRouter from './routes/index';
 import setsRouter from './routes/sets';
 import { testConnection } from './services/database/index';
+const cors = require('cors');
 import dotenv from 'dotenv';
 import express, { NextFunction, Request, Response } from 'express';
 import swaggerUi from "swagger-ui-express";
@@ -13,6 +14,7 @@ const swaggerDocument = require("../swagger.json");
 const app = express();
 const port = process.env.PORT || 4000;
 
+app.use(cors());
 app.use(express.json());
 
 app.use('/', indexRouter);
