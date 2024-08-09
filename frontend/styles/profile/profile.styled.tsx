@@ -5,6 +5,7 @@ export const PassContainer = styled.div`
   background-color: #eef3ff;
 
   @media (min-width: 1024px) {
+    padding: 32px;
     border-radius: 40px;
   }
 `;
@@ -28,14 +29,20 @@ export const InfoContainer = styled.div`
   @media (min-width: 1024px) {
     border-radius: 40px;
     margin-right: 16px;
+    max-width: 600px;
+    padding: 32px;
   }
 `;
 
 export const InfoHeader = styled.h2`
   color: #110178;
+  padding: 0;
+  margin: 0;
+
   @media (min-width: 1024px) {
     font-size: 24px;
     line-height: 1.35;
+    margin-bottom: 28px;
   }
 `;
 
@@ -44,6 +51,7 @@ export const InfoForm = styled.form``;
 export const InfoList = styled.ul`
   list-style: none;
   padding: 0;
+  margin: 0;
 
   @media (min-width: 1024px) {
     margin-bottom: 40px;
@@ -73,6 +81,7 @@ export const InfoInput = styled.input`
   border: 1px solid #afb0d0;
   color: #110178;
   @media (min-width: 1024px) {
+    max-width: 536px;
     border-radius: 20px;
     font-size: 18px;
     line-height: 1.5;
@@ -82,6 +91,8 @@ export const InfoInput = styled.input`
 export const Btn = styled.button`
   background-color: #6b09e8;
   color: #ffffff;
+  border: none;
+  float: right;
 
   @media (min-width: 1024px) {
     font-size: 18px;

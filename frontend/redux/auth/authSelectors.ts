@@ -1,5 +1,15 @@
 export interface IState {
-  clients: {};
+  clients: {
+    info: {
+      name: string;
+      contact_email_tech: string;
+      contact_email_fin: string;
+      contact_tel_tech: string;
+      contact_tel_fin: string;
+      active: number;
+      password?: string;
+    };
+  };
   auth: {
     id: string;
     token: string | null;

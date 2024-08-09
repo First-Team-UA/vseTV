@@ -10,8 +10,6 @@ import {
   PassContainer,
 } from '../../styles/profile/profile.styled';
 import SubmitButton from './submitButton';
-import profileAPI from '@frontend/API/profileAPI';
-import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -20,13 +18,6 @@ const ChangePasswordForm: React.FC = () => {
   const [newPassword, setNewPassword] = useState<string>('');
   const [confirmPassword, setConfirmPassword] = useState<string>('');
   const { t } = useTranslation();
-
-  const router = useRouter();
-  const { id } = router.query;
-
-  if (typeof id !== 'string') {
-    return <p>Loading...</p>;
-  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.currentTarget;
@@ -58,8 +49,6 @@ const ChangePasswordForm: React.FC = () => {
       password,
       newPassword,
     };
-
-    profileAPI.changePassword(id, passObj);
   };
 
   return (

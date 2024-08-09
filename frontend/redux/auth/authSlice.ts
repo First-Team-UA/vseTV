@@ -1,5 +1,6 @@
 import { IResult, login, logout } from './authOperations';
 import { PayloadAction, createSlice, SerializedError } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 
 export interface IInitital {
   id: string;
@@ -24,6 +25,14 @@ const authSlice = createSlice({
   reducers: {
     setID(state, action) {
       state.id = action.payload;
+    },
+    setIsLoadingServer(state, action: PayloadAction<boolean>) {
+      state.isLoadingServer = action.payload;
+    },
+    setError(state, action: PayloadAction<SerializedError>) {
+      if (action.payload) {
+        state.error = action.payload;
+      }
     },
   },
   extraReducers: builder => {
@@ -65,6 +74,6 @@ const authSlice = createSlice({
   },
 });
 
-export const { setID } = authSlice.actions;
+export const { setID, setIsLoadingServer, setError } = authSlice.actions;
 export default authSlice.reducer;
 export const authReducer = authSlice.reducer;
